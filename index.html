@@ -1,0 +1,1802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Om Arham Ornaments | Premium Jewellery — Vadodara</title>
+<meta name="description" content="Om Arham Ornaments — Hallmarked gold, diamond and silver jewellery in Vadodara, Gujarat. BIS certified, trusted since decades.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #D2AD27;
+  --gold-dark: #A88A1A;
+  --gold-light: #E8CE6A;
+  --red: #A20021;
+  --red-dark: #7A0019;
+  --bg: #FAFAFA;
+  --dark: #1A1209;
+  --dark2: #2C2015;
+  --text: #2C2015;
+  --text2: #6B6050;
+  --text3: #9E9488;
+  --border: rgba(210,173,39,0.22);
+  --border2: rgba(210,173,39,0.45);
+  --white: #ffffff;
+  --card-shadow: 0 4px 24px rgba(26,18,9,0.09);
+  --card-shadow-hover: 0 16px 48px rgba(26,18,9,0.18);
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'Jost', system-ui, sans-serif;
+  --radius: 3px;
+  --radius-md: 4px;
+  --nav-h: 68px;
+  --ticker-h: 40px;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.6}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+button{font-family:var(--sans);cursor:pointer;border:none;background:none}
+select,input,textarea{font-family:var(--sans)}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:#f0ebe0}
+::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px}
+
+/* ── UTILITIES ── */
+.serif{font-family:var(--serif)}
+.gold-txt{color:var(--gold)}
+.red-txt{color:var(--red)}
+.hide{display:none!important}
+.page{display:none}
+.page.active{display:block}
+.flex{display:flex}
+.flex-c{display:flex;align-items:center}
+.flex-cc{display:flex;align-items:center;justify-content:center}
+.grid{display:grid}
+
+/* ── TICKER ── */
+.ticker{background:var(--gold);height:var(--ticker-h);overflow:hidden;display:flex;align-items:center;position:relative;z-index:120}
+.ticker-track{display:flex;gap:0;animation:ticker-move 28s linear infinite;white-space:nowrap;width:max-content}
+.ticker-item{font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#fff;padding:0 48px;display:flex;align-items:center;gap:12px}
+.ticker-item::before{content:'✦';opacity:.7}
+@keyframes ticker-move{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* ── NAVBAR ── */
+.nav{position:fixed;top:var(--ticker-h);left:0;right:0;z-index:110;background:rgba(250,250,250,.97);border-bottom:1.5px solid var(--gold);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:box-shadow .3s}
+.nav.scrolled{box-shadow:0 4px 32px rgba(26,18,9,.12)}
+.nav-inner{max-width:1300px;margin:0 auto;padding:0 28px;height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;gap:20px}
+.nav-logo{font-family:var(--serif);font-size:24px;font-weight:700;color:var(--dark);letter-spacing:.03em;line-height:1;cursor:pointer;flex-shrink:0}
+.nav-logo span{color:var(--gold)}
+.nav-links{display:flex;align-items:center;gap:36px}
+.nav-link{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text);cursor:pointer;transition:color .2s;background:none;border:none;padding:4px 0;position:relative}
+.nav-link::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:1.5px;background:var(--gold);transform:scaleX(0);transition:transform .25s}
+.nav-link:hover,.nav-link.active{color:var(--gold)}
+.nav-link:hover::after,.nav-link.active::after{transform:scaleX(1)}
+.nav-ig{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text);cursor:pointer;transition:color .2s;background:none;border:none}
+.nav-ig:hover{color:#c13584}
+.nav-wa{background:var(--gold);color:#fff;padding:11px 22px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border-radius:var(--radius);transition:all .2s;border:none}
+.nav-wa:hover{background:var(--gold-dark);transform:translateY(-1px);box-shadow:0 6px 20px rgba(210,173,39,.4)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}
+.hamburger span{width:24px;height:2px;background:var(--dark);display:block;transition:all .3s;border-radius:2px}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.mobile-menu{display:none;position:fixed;top:calc(var(--ticker-h) + var(--nav-h));left:0;right:0;background:var(--bg);border-bottom:2px solid var(--gold);z-index:109;padding:24px 28px;flex-direction:column;gap:4px;box-shadow:0 16px 48px rgba(26,18,9,.15)}
+.mobile-menu.open{display:flex}
+.mob-link{font-size:16px;font-weight:500;color:var(--text);padding:14px 0;border-bottom:1px solid rgba(210,173,39,.12);cursor:pointer;background:none;border-left:none;border-right:none;border-top:none;text-align:left;display:flex;align-items:center;gap:10px;transition:color .2s}
+.mob-link:hover,.mob-link.active{color:var(--gold)}
+.mob-link:last-child{border-bottom:none}
+@media(max-width:900px){.nav-links{display:none}.hamburger{display:flex}}
+
+/* ── HERO ── */
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;background:var(--dark);padding-top:calc(var(--ticker-h) + var(--nav-h))}
+#hero-canvas{position:absolute;inset:0;width:100%;height:100%;opacity:.28}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(120deg,rgba(26,18,9,.92) 0%,rgba(26,18,9,.72) 55%,rgba(26,18,9,.45) 100%)}
+.hero-content{position:relative;z-index:2;max-width:1300px;margin:0 auto;padding:60px 28px 80px;width:100%}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:10px;background:rgba(210,173,39,.12);border:1px solid rgba(210,173,39,.38);padding:9px 20px;border-radius:var(--radius);margin-bottom:32px}
+.hero-eyebrow span{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.hero-title{font-family:var(--serif);font-size:clamp(52px,8vw,96px);font-weight:300;color:#fff;line-height:1.02;margin-bottom:6px;letter-spacing:-.01em}
+.hero-title strong{display:block;font-weight:700;color:var(--gold);font-style:italic}
+.hero-sub{font-size:clamp(15px,1.8vw,18px);color:rgba(255,255,255,.68);font-weight:300;margin:20px 0 44px;max-width:540px;line-height:1.78;letter-spacing:.01em}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap}
+.btn-gold{background:var(--gold);color:#fff;padding:16px 38px;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border-radius:var(--radius);transition:all .22s;border:none;display:inline-flex;align-items:center;gap:8px}
+.btn-gold:hover{background:var(--gold-dark);transform:translateY(-2px);box-shadow:0 10px 36px rgba(210,173,39,.45)}
+.btn-ghost{background:transparent;color:#fff;padding:16px 38px;font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;border:1.5px solid rgba(255,255,255,.38);border-radius:var(--radius);transition:all .22s;display:inline-flex;align-items:center;gap:8px}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold);background:rgba(210,173,39,.07)}
+.hero-stats{display:flex;gap:40px;margin-top:56px;flex-wrap:wrap}
+.hero-stat span:first-child{display:block;font-family:var(--serif);font-size:36px;font-weight:700;color:var(--gold);line-height:1}
+.hero-stat span:last-child{font-size:12px;color:rgba(255,255,255,.5);letter-spacing:.1em;text-transform:uppercase;margin-top:4px;display:block}
+.hero-scroll{position:absolute;bottom:36px;right:36px;display:flex;flex-direction:column;align-items:center;gap:8px;z-index:3}
+.hero-scroll span{font-size:9px;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,255,255,.35);writing-mode:vertical-rl}
+.scroll-line{width:1px;height:48px;background:linear-gradient(to bottom,rgba(210,173,39,.8),transparent);animation:scroll-pulse 2s ease-in-out infinite}
+@keyframes scroll-pulse{0%,100%{height:48px;opacity:.5}50%{height:72px;opacity:1}}
+@media(max-width:600px){.hero-stats{gap:24px}.hero-stat span:first-child{font-size:28px}}
+
+/* ── SECTION LAYOUT ── */
+.section{padding:88px 28px;max-width:1300px;margin:0 auto}
+.section-sm{padding:56px 28px;max-width:1300px;margin:0 auto}
+.section-full{padding:80px 28px}
+.section-label{font-size:10px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;display:block}
+.section-title{font-family:var(--serif);font-size:clamp(34px,4.5vw,58px);font-weight:600;color:var(--dark);line-height:1.06;letter-spacing:-.01em}
+.section-desc{font-size:16px;color:var(--text2);line-height:1.82;margin-top:12px;max-width:560px}
+.gold-bar{width:56px;height:2.5px;background:var(--gold);margin:18px 0 0;border-radius:2px}
+.sec-header{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:52px;flex-wrap:wrap}
+.btn-outline-gold{background:transparent;color:var(--gold);border:1.5px solid var(--gold);padding:11px 26px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border-radius:var(--radius);transition:all .2s;cursor:pointer}
+.btn-outline-gold:hover{background:var(--gold);color:#fff}
+
+/* ── CATEGORIES ── */
+.cats-bg{background:#fff}
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:14px}
+.cat-card{background:var(--dark);border:1px solid rgba(210,173,39,.18);border-radius:var(--radius-md);padding:32px 16px 24px;text-align:center;cursor:pointer;transition:all .28s;position:relative;overflow:hidden}
+.cat-card::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0,rgba(210,173,39,.14) 0,transparent 70%);transition:opacity .3s;opacity:0}
+.cat-card:hover{transform:translateY(-5px);border-color:var(--gold);box-shadow:0 18px 48px rgba(26,18,9,.32)}
+.cat-card:hover::before{opacity:1}
+.cat-icon{font-size:34px;display:block;margin-bottom:14px;transition:transform .3s}
+.cat-card:hover .cat-icon{transform:scale(1.12)}
+.cat-name{font-family:var(--serif);font-size:18px;font-weight:600;color:#fff;margin-bottom:5px;line-height:1.2}
+.cat-cnt{font-size:11px;color:rgba(210,173,39,.75);letter-spacing:.1em}
+
+/* ── PRODUCT CARDS ── */
+.prod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(268px,1fr));gap:22px}
+.prod-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius-md);overflow:hidden;cursor:pointer;transition:all .28s;box-shadow:var(--card-shadow)}
+.prod-card:hover{transform:translateY(-5px);border-color:var(--gold);box-shadow:var(--card-shadow-hover)}
+.prod-img-wrap{width:100%;aspect-ratio:1;background:linear-gradient(140deg,#f8f3ea 0%,#ece3cc 100%);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;font-size:80px;transition:transform .4s}
+.prod-card:hover .prod-img-wrap{transform:scale(1.03)}
+.prod-badges{position:absolute;top:12px;left:12px;display:flex;flex-direction:column;gap:5px}
+.badge-feat{background:var(--red);color:#fff;font-size:9px;font-weight:700;letter-spacing:.12em;padding:4px 10px;border-radius:2px;text-transform:uppercase}
+.badge-new{background:var(--gold);color:#fff;font-size:9px;font-weight:700;letter-spacing:.12em;padding:4px 10px;border-radius:2px;text-transform:uppercase}
+.badge-bs{background:var(--dark);color:var(--gold);font-size:9px;font-weight:700;letter-spacing:.12em;padding:4px 10px;border-radius:2px;text-transform:uppercase;border:1px solid rgba(210,173,39,.3)}
+.prod-body{padding:18px}
+.prod-code{font-size:10px;letter-spacing:.18em;color:var(--text3);text-transform:uppercase;margin-bottom:4px}
+.prod-name{font-family:var(--serif);font-size:21px;font-weight:600;color:var(--dark);line-height:1.18;margin-bottom:5px}
+.prod-sub{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:14px}
+.prod-foot{display:flex;justify-content:space-between;align-items:center}
+.prod-price{font-family:var(--serif);font-size:23px;font-weight:700;color:var(--gold)}
+.prod-purity{font-size:10px;background:rgba(210,173,39,.12);color:#7A5C10;padding:4px 10px;border-radius:2px;font-weight:600;letter-spacing:.06em}
+.prod-stock-row{margin-top:10px;display:flex;justify-content:space-between;align-items:center}
+.prod-stock{font-size:11px;color:#2e7d32;font-weight:600}
+.prod-stock.out{color:var(--red)}
+.prod-wt{font-size:11px;color:var(--text3)}
+
+/* ── TABLE VIEW ── */
+.tbl-wrap{background:#fff;border:1px solid var(--border);border-radius:var(--radius-md);overflow:hidden;overflow-x:auto;box-shadow:var(--card-shadow)}
+table.prod-tbl{width:100%;border-collapse:collapse;min-width:700px}
+.prod-tbl thead tr{background:var(--dark)}
+.prod-tbl th{padding:13px 18px;text-align:left;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.85);white-space:nowrap}
+.prod-tbl td{padding:15px 18px;font-size:14px;border-bottom:1px solid rgba(210,173,39,.1);vertical-align:middle}
+.prod-tbl tbody tr{cursor:pointer;transition:background .18s}
+.prod-tbl tbody tr:hover td{background:rgba(210,173,39,.05)}
+.prod-tbl tbody tr:last-child td{border-bottom:none}
+.tbl-name{font-family:var(--serif);font-size:17px;font-weight:600;color:var(--dark)}
+.tbl-sub{font-size:11px;color:var(--text3);margin-top:2px}
+.pill{display:inline-flex;padding:4px 11px;border-radius:2px;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+.pill-gold{background:rgba(210,173,39,.14);color:#7A5C10}
+.pill-green{background:rgba(46,125,50,.1);color:#2e7d32}
+.pill-red{background:rgba(162,0,33,.1);color:var(--red)}
+.pill-dark{background:rgba(26,18,9,.08);color:var(--dark)}
+
+/* ── CATALOGUE PAGE ── */
+.cat-page-layout{display:grid;grid-template-columns:272px 1fr;gap:28px;align-items:start}
+@media(max-width:960px){.cat-page-layout{grid-template-columns:1fr}}
+.filter-sidebar{background:#fff;border:1px solid var(--border);border-radius:var(--radius-md);padding:26px;position:sticky;top:calc(var(--ticker-h) + var(--nav-h) + 20px);box-shadow:var(--card-shadow)}
+@media(max-width:960px){.filter-sidebar{display:none;position:relative;top:0}}
+.filter-sidebar.mob-open{display:block}
+.filter-ttl{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--dark);padding-bottom:14px;border-bottom:2px solid var(--gold);margin-bottom:22px}
+.filter-sec{margin-bottom:26px}
+.filter-sec-ttl{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--text3);margin-bottom:13px}
+.filter-opt{display:flex;align-items:center;gap:10px;padding:7px 0;cursor:pointer}
+.filter-opt input[type=checkbox]{width:15px;height:15px;accent-color:var(--gold);cursor:pointer;flex-shrink:0}
+.filter-opt label{font-size:14px;color:var(--text);cursor:pointer;flex:1;line-height:1.3}
+.filter-opt .fcnt{font-size:11px;color:var(--text3)}
+.price-row{display:flex;align-items:center;gap:8px;margin-top:6px}
+.price-inp{width:96px;padding:9px 11px;border:1.5px solid rgba(210,173,39,.3);border-radius:var(--radius);font-size:13px;color:var(--text);transition:border-color .2s}
+.price-inp:focus{outline:none;border-color:var(--gold)}
+.btn-apply{width:100%;background:var(--gold);color:#fff;border:none;padding:12px;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;border-radius:var(--radius);margin-top:6px;transition:background .2s}
+.btn-apply:hover{background:var(--gold-dark)}
+.btn-clear{width:100%;background:transparent;color:var(--text3);border:1px solid #ddd;padding:10px;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;border-radius:var(--radius);margin-top:8px;transition:all .2s}
+.btn-clear:hover{border-color:var(--red);color:var(--red)}
+.toolbar{display:flex;gap:10px;align-items:center;margin-bottom:24px;flex-wrap:wrap}
+.search-wrap{flex:1;min-width:220px;position:relative}
+.search-wrap input{width:100%;padding:12px 16px 12px 46px;border:1.5px solid rgba(210,173,39,.3);border-radius:var(--radius);font-size:15px;color:var(--text);background:#fff;transition:border-color .2s}
+.search-wrap input:focus{outline:none;border-color:var(--gold)}
+.search-wrap input::placeholder{color:var(--text3)}
+.search-ico{position:absolute;left:15px;top:50%;transform:translateY(-50%);font-size:18px;pointer-events:none;opacity:.5}
+.view-tog{display:flex;border:1.5px solid rgba(210,173,39,.3);border-radius:var(--radius);overflow:hidden}
+.view-btn{padding:10px 14px;background:#fff;cursor:pointer;font-size:17px;transition:all .2s;color:var(--text3);border:none;line-height:1}
+.view-btn.on{background:var(--gold);color:#fff}
+.sort-sel{padding:12px 14px;border:1.5px solid rgba(210,173,39,.3);border-radius:var(--radius);font-size:13px;color:var(--text);background:#fff;cursor:pointer}
+.sort-sel:focus{outline:none;border-color:var(--gold)}
+.mob-filter-btn{display:none;padding:11px 18px;background:var(--dark);color:#fff;border:none;border-radius:var(--radius);font-size:13px;font-weight:600;cursor:pointer;align-items:center;gap:7px;white-space:nowrap}
+@media(max-width:960px){.mob-filter-btn{display:flex}}
+.res-count{font-size:13px;color:var(--text3);white-space:nowrap}
+.mob-chips{display:none;gap:8px;overflow-x:auto;padding-bottom:6px;margin-bottom:18px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.mob-chips::-webkit-scrollbar{display:none}
+@media(max-width:960px){.mob-chips{display:flex}}
+.mob-chip{padding:8px 18px;border:1.5px solid rgba(210,173,39,.3);border-radius:20px;font-size:12px;font-weight:600;color:var(--text);white-space:nowrap;cursor:pointer;background:#fff;transition:all .22s;flex-shrink:0}
+.mob-chip.on{background:var(--gold);color:#fff;border-color:var(--gold)}
+
+/* ── PRODUCT MODAL ── */
+.modal-bg{display:none;position:fixed;inset:0;background:rgba(26,18,9,.78);z-index:500;align-items:center;justify-content:center;padding:20px;animation:fade-in .22s ease}
+.modal-bg.open{display:flex}
+@keyframes fade-in{from{opacity:0}to{opacity:1}}
+.modal-box{background:#fff;border-radius:var(--radius-md);max-width:920px;width:100%;max-height:92vh;overflow-y:auto;box-shadow:0 40px 100px rgba(26,18,9,.45);animation:modal-up .3s cubic-bezier(.34,1.56,.64,1)}
+@keyframes modal-up{from{transform:translateY(40px) scale(.96);opacity:0}to{transform:none;opacity:1}}
+.modal-grid{display:grid;grid-template-columns:1fr 1fr;min-height:520px}
+@media(max-width:660px){.modal-grid{grid-template-columns:1fr}}
+.modal-img-side{background:linear-gradient(140deg,#f8f3ea 0%,#e8dcc4 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px;position:relative;min-height:340px}
+.modal-big-img{font-size:120px;line-height:1;display:block;filter:drop-shadow(0 12px 32px rgba(26,18,9,.15));transition:transform .4s}
+.modal-big-img:hover{transform:scale(1.05) rotate(-3deg)}
+.modal-thumbs{display:flex;gap:8px;margin-top:20px}
+.modal-thumb{width:52px;height:52px;border-radius:var(--radius);background:rgba(255,255,255,.75);border:2px solid transparent;display:flex;align-items:center;justify-content:center;font-size:22px;cursor:pointer;transition:border-color .2s}
+.modal-thumb.on{border-color:var(--gold)}
+.modal-close-btn{position:absolute;top:14px;right:14px;width:34px;height:34px;background:rgba(26,18,9,.12);border:none;border-radius:50%;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:all .2s;color:var(--dark)}
+.modal-close-btn:hover{background:var(--red);color:#fff}
+.modal-body-side{padding:36px 32px;display:flex;flex-direction:column;gap:0}
+@media(max-width:660px){.modal-body-side{padding:24px 20px}}
+.modal-code{font-size:10px;letter-spacing:.22em;color:var(--text3);text-transform:uppercase;margin-bottom:5px}
+.modal-name{font-family:var(--serif);font-size:30px;font-weight:700;color:var(--dark);line-height:1.1;margin-bottom:7px}
+.modal-cat-line{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:16px;display:flex;gap:8px;flex-wrap:wrap}
+.modal-cat-line span{padding:3px 10px;background:rgba(210,173,39,.1);color:#7A5C10;border-radius:2px;font-weight:600}
+.modal-price{font-family:var(--serif);font-size:38px;font-weight:700;color:var(--gold);letter-spacing:-.01em;margin-bottom:20px}
+.specs-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-bottom:22px}
+.spec-box{background:#f8f4ec;border-radius:var(--radius);padding:12px 14px}
+.spec-lbl{font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--text3);margin-bottom:4px}
+.spec-val{font-size:15px;font-weight:600;color:var(--dark)}
+.modal-badges{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:22px}
+.m-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(210,173,39,.1);border:1px solid rgba(210,173,39,.28);padding:6px 13px;border-radius:2px;font-size:11px;font-weight:600;color:#7A5C10;letter-spacing:.05em}
+.m-badge.cert{background:rgba(162,0,33,.07);border-color:rgba(162,0,33,.2);color:var(--red)}
+.modal-desc{font-size:14px;color:var(--text2);line-height:1.82;margin-bottom:24px;padding-top:18px;border-top:1px solid rgba(210,173,39,.15)}
+.wa-inquiry-btn{width:100%;background:#25D366;color:#fff;border:none;padding:16px;font-size:15px;font-weight:700;letter-spacing:.06em;cursor:pointer;border-radius:var(--radius);display:flex;align-items:center;justify-content:center;gap:10px;transition:all .22s}
+.wa-inquiry-btn:hover{background:#1da851;transform:translateY(-2px);box-shadow:0 10px 30px rgba(37,211,102,.38)}
+.call-btn{width:100%;background:transparent;color:var(--dark);border:1.5px solid rgba(210,173,39,.45);padding:13px;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;border-radius:var(--radius);margin-top:10px;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:8px}
+.call-btn:hover{border-color:var(--gold);background:rgba(210,173,39,.07)}
+
+/* ── TRUST BAND ── */
+.trust-band{background:var(--dark);padding:60px 28px}
+.trust-inner{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:36px}
+.trust-item{text-align:center}
+.trust-ico{font-size:38px;display:block;margin-bottom:14px}
+.trust-lbl{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--gold);margin-bottom:8px}
+.trust-txt{font-size:13px;color:rgba(255,255,255,.55);line-height:1.68}
+
+/* ── OCCASIONS ── */
+.occ-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:640px){.occ-grid{grid-template-columns:1fr 1fr}}
+.occ-card{position:relative;border-radius:var(--radius-md);overflow:hidden;aspect-ratio:3/4;cursor:pointer;border:1px solid rgba(210,173,39,.15)}
+.occ-bg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:88px;transition:transform .45s ease}
+.occ-card:hover .occ-bg{transform:scale(1.12)}
+.occ-shade{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,18,9,.9) 0%,rgba(26,18,9,.25) 55%,transparent 100%)}
+.occ-lbl{position:absolute;bottom:0;left:0;right:0;padding:20px 16px}
+.occ-name{font-family:var(--serif);font-size:21px;font-weight:700;color:#fff;margin-bottom:4px}
+.occ-sub{font-size:10px;color:rgba(255,255,255,.55);letter-spacing:.14em;text-transform:uppercase}
+
+/* ── WA CTA BAND ── */
+.wa-band{background:var(--gold);padding:64px 28px;text-align:center}
+.wa-band-title{font-family:var(--serif);font-size:clamp(28px,4vw,50px);font-weight:700;color:#fff;margin-bottom:12px;line-height:1.08}
+.wa-band-sub{font-size:16px;color:rgba(255,255,255,.82);line-height:1.75;margin-bottom:36px;max-width:520px;margin-left:auto;margin-right:auto}
+.wa-white-btn{background:#fff;color:#1a7a40;padding:17px 44px;border:none;border-radius:var(--radius);font-size:16px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:10px;transition:all .22s;letter-spacing:.04em}
+.wa-white-btn:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(26,18,9,.22)}
+
+/* ── CONTACT ── */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+@media(max-width:768px){.contact-grid{grid-template-columns:1fr}}
+.contact-card{background:var(--dark);border-radius:var(--radius-md);padding:38px;border:1px solid rgba(210,173,39,.2)}
+.contact-row{display:flex;gap:17px;margin-bottom:26px;align-items:flex-start}
+.contact-row:last-child{margin-bottom:0}
+.contact-ico{width:44px;height:44px;background:rgba(210,173,39,.14);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;border:1px solid rgba(210,173,39,.2)}
+.contact-lbl{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:5px}
+.contact-val{font-size:15px;color:#fff;line-height:1.55;font-weight:400}
+.map-box{background:#f0ebe0;border-radius:var(--radius-md);height:300px;display:flex;flex-direction:column;align-items:center;justify-content:center;border:1.5px dashed rgba(210,173,39,.4);cursor:pointer;gap:12px;transition:all .25s}
+.map-box:hover{border-color:var(--gold);background:#ede5d0}
+.map-box .map-ico{font-size:56px;display:block}
+.map-box .map-label{font-size:16px;font-weight:600;color:var(--dark)}
+.map-box .map-sub{font-size:13px;color:var(--text3);text-align:center;padding:0 24px}
+
+/* ── FOOTER ── */
+footer{background:#0E0B06;padding:56px 28px 0}
+.footer-inner{max-width:1300px;margin:0 auto}
+.footer-grid{display:grid;grid-template-columns:2.2fr 1fr 1fr 1.2fr;gap:48px;margin-bottom:48px}
+@media(max-width:960px){.footer-grid{grid-template-columns:1fr 1fr;gap:36px}}
+@media(max-width:480px){.footer-grid{grid-template-columns:1fr;gap:28px}}
+.footer-logo{font-family:var(--serif);font-size:26px;font-weight:700;color:#fff;margin-bottom:14px}
+.footer-logo span{color:var(--gold)}
+.footer-tagline{font-size:13px;color:rgba(255,255,255,.38);line-height:1.78;max-width:270px;margin-bottom:22px}
+.footer-socials{display:flex;gap:10px}
+.footer-social{width:38px;height:38px;border-radius:var(--radius);display:flex;align-items:center;justify-content:center;font-size:17px;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+.footer-col-title{font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.footer-link{display:block;font-size:13px;color:rgba(255,255,255,.45);margin-bottom:11px;cursor:pointer;transition:color .2s;background:none;border:none;text-align:left;padding:0}
+.footer-link:hover{color:var(--gold)}
+.footer-addr{font-size:13px;color:rgba(255,255,255,.4);line-height:1.82}
+.footer-addr a{color:var(--gold)}
+.footer-divider{border:none;border-top:1px solid rgba(255,255,255,.06);margin:0 0 18px}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding-bottom:24px}
+.footer-copy{font-size:12px;color:rgba(255,255,255,.22)}
+.admin-trigger{background:transparent;border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.25);padding:8px 18px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;border-radius:2px;transition:all .25s;font-family:var(--sans)}
+.admin-trigger:hover{border-color:rgba(210,173,39,.45);color:var(--gold)}
+
+/* ── MOBILE BOTTOM NAV ── */
+.bottom-nav{display:none;position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1.5px solid rgba(210,173,39,.3);z-index:108;padding-bottom:env(safe-area-inset-bottom)}
+@media(max-width:768px){.bottom-nav{display:flex}}
+.bn-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;padding:10px 4px 8px;cursor:pointer;transition:all .2s;background:none;border:none}
+.bn-ico{font-size:22px;display:block;line-height:1}
+.bn-lbl{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#999;transition:color .2s}
+.bn-item.on .bn-lbl{color:var(--gold)}
+.bn-item.on .bn-ico{filter:drop-shadow(0 0 4px rgba(210,173,39,.5))}
+@media(max-width:768px){body{padding-bottom:65px}}
+
+/* ── WA FLOAT ── */
+.wa-float{position:fixed;right:22px;bottom:80px;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 8px 28px rgba(37,211,102,.45);z-index:149;transition:all .25s;border:none;font-size:26px;text-decoration:none}
+.wa-float:hover{transform:scale(1.1);box-shadow:0 14px 40px rgba(37,211,102,.55)}
+@media(min-width:769px){.wa-float{bottom:28px}}
+
+/* ── ADMIN LOGIN ── */
+.admin-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:600;align-items:center;justify-content:center;padding:20px}
+.admin-overlay.open{display:flex}
+.admin-login-box{background:#1c1c1c;border:1.5px solid rgba(210,173,39,.28);border-radius:var(--radius-md);padding:52px 44px;width:100%;max-width:420px;box-shadow:0 40px 100px rgba(0,0,0,.6)}
+@media(max-width:480px){.admin-login-box{padding:36px 24px}}
+.admin-login-logo{font-family:var(--serif);font-size:30px;font-weight:700;color:#fff;text-align:center;margin-bottom:5px}
+.admin-login-logo span{color:var(--gold)}
+.admin-login-sub{text-align:center;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:32px}
+.admin-divider{width:40px;height:1.5px;background:var(--gold);margin:14px auto 28px}
+.admin-inp{width:100%;padding:15px 16px;background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.13);border-radius:var(--radius);font-size:15px;font-family:var(--sans);color:#fff;margin-bottom:14px;transition:border-color .2s}
+.admin-inp:focus{outline:none;border-color:var(--gold)}
+.admin-inp::placeholder{color:rgba(255,255,255,.28)}
+.admin-login-btn{width:100%;background:var(--gold);color:#fff;border:none;padding:16px;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;border-radius:var(--radius);transition:all .2s;font-family:var(--sans)}
+.admin-login-btn:hover{background:var(--gold-dark)}
+.admin-login-btn:disabled{opacity:.5;cursor:not-allowed}
+.admin-back-btn{width:100%;background:transparent;color:rgba(255,255,255,.3);border:none;padding:12px;margin-top:12px;cursor:pointer;font-size:13px;font-family:var(--sans);transition:color .2s}
+.admin-back-btn:hover{color:rgba(255,255,255,.6)}
+.admin-error{background:rgba(162,0,33,.15);border:1px solid rgba(162,0,33,.3);border-left:3px solid var(--red);color:#ff8a8a;font-size:13px;padding:11px 14px;border-radius:var(--radius);margin-bottom:14px}
+.admin-security-note{text-align:center;font-size:10px;color:rgba(255,255,255,.15);letter-spacing:.12em;margin-top:22px}
+
+/* ── ADMIN PANEL ── */
+.admin-panel-wrap{display:none;position:fixed;inset:0;z-index:600;overflow-y:auto;background:#f2f2f0}
+.admin-panel-wrap.open{display:block}
+.admin-top-bar{background:var(--dark);height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;border-bottom:2px solid var(--gold);position:sticky;top:0;z-index:10}
+.admin-top-logo{font-family:var(--serif);font-size:21px;font-weight:700;color:#fff}
+.admin-top-logo span{color:var(--gold)}
+.admin-exit{background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.12);padding:8px 20px;border-radius:var(--radius);font-size:12px;font-weight:600;cursor:pointer;transition:all .2s;font-family:var(--sans);letter-spacing:.06em}
+.admin-exit:hover{background:rgba(255,255,255,.15);color:#fff}
+.admin-tabs{display:flex;gap:0;overflow-x:auto;background:#fff;border-bottom:1px solid #e8e8e8;padding:0 24px;-webkit-overflow-scrolling:touch}
+.admin-tab{padding:15px 20px;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#888;cursor:pointer;border-bottom:2.5px solid transparent;transition:all .2s;white-space:nowrap;background:none;border-left:none;border-right:none;border-top:none;font-family:var(--sans)}
+.admin-tab.on{color:var(--gold);border-bottom-color:var(--gold)}
+.admin-content{padding:28px;max-width:1200px;margin:0 auto}
+.admin-section-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px;flex-wrap:wrap;gap:12px}
+.admin-section-title{font-family:var(--serif);font-size:26px;font-weight:700;color:var(--dark)}
+.admin-section-sub{font-size:13px;color:var(--text3);margin-top:2px}
+.acard{background:#fff;border-radius:var(--radius-md);border:1px solid #e4e4e4;margin-bottom:20px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.04)}
+.acard-head{padding:15px 22px;border-bottom:1px solid #f0f0f0;background:#fafafa;display:flex;justify-content:space-between;align-items:center}
+.acard-title{font-size:14px;font-weight:700;color:var(--dark);letter-spacing:.02em}
+.acard-body{padding:22px}
+.aform-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+@media(max-width:600px){.aform-row{grid-template-columns:1fr}}
+.aform-group{display:flex;flex-direction:column;gap:7px}
+.aform-label{font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#777}
+.aform-input{padding:10px 14px;border:1.5px solid #e0e0e0;border-radius:var(--radius);font-size:14px;font-family:var(--sans);color:var(--text);transition:border-color .2s}
+.aform-input:focus{outline:none;border-color:var(--gold)}
+.aform-select{padding:10px 14px;border:1.5px solid #e0e0e0;border-radius:var(--radius);font-size:14px;font-family:var(--sans);color:var(--text);background:#fff;cursor:pointer}
+.aform-select:focus{outline:none;border-color:var(--gold)}
+.aform-textarea{padding:10px 14px;border:1.5px solid #e0e0e0;border-radius:var(--radius);font-size:14px;font-family:var(--sans);color:var(--text);resize:vertical;min-height:80px;line-height:1.6}
+.aform-textarea:focus{outline:none;border-color:var(--gold)}
+.halm-grid{display:flex;flex-wrap:wrap;gap:8px}
+.halm-cb{display:flex;align-items:center;gap:7px;font-size:13px;background:#f8f5f0;padding:7px 13px;border-radius:2px;cursor:pointer}
+.halm-cb input{accent-color:var(--gold);width:14px;height:14px}
+.aform-flags{display:flex;gap:10px;flex-wrap:wrap;margin-top:4px}
+.flag-cb{display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer;background:#f8f8f8;padding:9px 15px;border-radius:var(--radius)}
+.flag-cb input{accent-color:var(--gold);width:14px;height:14px}
+.abtn{padding:10px 22px;border:none;border-radius:var(--radius);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:all .2s;font-family:var(--sans)}
+.abtn-gold{background:var(--gold);color:#fff}
+.abtn-gold:hover{background:var(--gold-dark)}
+.abtn-dark{background:var(--dark);color:#fff}
+.abtn-dark:hover{background:#333}
+.abtn-red{background:var(--red);color:#fff}
+.abtn-red:hover{background:var(--red-dark)}
+.abtn-outline{background:transparent;border:1.5px solid var(--gold);color:var(--dark);padding:8px 16px}
+.abtn-outline:hover{background:var(--gold);color:#fff}
+table.admin-tbl{width:100%;border-collapse:collapse;min-width:600px}
+.admin-tbl thead tr{background:#f8f8f8}
+.admin-tbl th{padding:11px 16px;text-align:left;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#777;border-bottom:1.5px solid #eee;white-space:nowrap}
+.admin-tbl td{padding:13px 16px;font-size:13px;border-bottom:1px solid #f2f2f2;vertical-align:middle}
+.admin-tbl tbody tr:hover td{background:#fdfaf4}
+.admin-tbl tbody tr:last-child td{border-bottom:none}
+.code-tag{background:#f5f0e8;color:#7A5C10;padding:4px 9px;border-radius:2px;font-size:11px;font-weight:700;font-family:monospace;letter-spacing:.06em;border:1px solid rgba(210,173,39,.2)}
+.aform-subcat-tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:10px}
+.subcat-tag{background:#f5f0e8;color:#7A5C10;padding:5px 12px;border-radius:2px;font-size:12px;font-weight:600;display:flex;align-items:center;gap:6px;border:1px solid rgba(210,173,39,.2)}
+.subcat-tag-rm{background:none;border:none;color:var(--red);cursor:pointer;font-size:15px;line-height:1;padding:0}
+
+/* ── MISC ── */
+.empty-state{text-align:center;padding:72px 24px;color:var(--text3)}
+.empty-state .empty-ico{font-size:52px;margin-bottom:14px;display:block}
+.empty-state .empty-ttl{font-size:18px;font-weight:600;color:var(--dark);margin-bottom:6px}
+.empty-state .empty-sub{font-size:14px;line-height:1.7}
+
+.separator{height:1px;background:linear-gradient(to right,transparent,rgba(210,173,39,.35),transparent);margin:0}
+
+/* ── RESPONSIVE ── */
+@media(max-width:768px){
+  .hero-scroll{display:none}
+  .sec-header{margin-bottom:36px}
+  .section{padding:60px 20px}
+  .section-full{padding:60px 20px}
+  .trust-inner{gap:28px}
+}
+@media(max-width:480px){
+  :root{--nav-h:60px;--ticker-h:36px}
+  .modal-box{max-height:95vh}
+}
+</style>
+</head>
+<body>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track" id="ticker-track"></div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="nav" id="main-nav">
+  <div class="nav-inner">
+    <div class="nav-logo" onclick="showPage('home')"><span>Om Arham</span> Ornaments</div>
+    <div class="nav-links">
+      <button class="nav-link active" data-page="home" onclick="showPage('home')">Home</button>
+      <button class="nav-link" data-page="catalogue" onclick="showPage('catalogue')">Catalogue</button>
+      <button class="nav-link" data-page="contact" onclick="showPage('contact')">Contact</button>
+      <button class="nav-ig" onclick="window.open('https://instagram.com','_blank')">
+        <span>📸</span> Instagram
+      </button>
+      <a href="https://wa.me/919228124181?text=Hello%20Om%20Arham%20Ornaments!%20I%20would%20like%20to%20inquire%20about%20your%20jewellery." target="_blank">
+        <button class="nav-wa">💬 WhatsApp Us</button>
+      </a>
+    </div>
+    <button class="hamburger" id="hamburger" onclick="toggleMobileMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <button class="mob-link active" data-page="home" onclick="showPage('home');closeMobileMenu()">🏠 Home</button>
+  <button class="mob-link" data-page="catalogue" onclick="showPage('catalogue');closeMobileMenu()">💎 Catalogue</button>
+  <button class="mob-link" data-page="contact" onclick="showPage('contact');closeMobileMenu()">📍 Contact</button>
+  <button class="mob-link" onclick="window.open('https://instagram.com','_blank');closeMobileMenu()">📸 Instagram</button>
+  <a href="https://wa.me/919228124181" target="_blank" style="margin-top:8px">
+    <button class="nav-wa" style="width:100%;padding:14px">💬 WhatsApp Inquiry</button>
+  </a>
+</div>
+
+<!-- ══════════════════════════════════════════
+     HOME PAGE
+══════════════════════════════════════════ -->
+<div id="page-home" class="page active">
+
+  <!-- HERO -->
+  <section class="hero">
+    <canvas id="hero-canvas"></canvas>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow"><span>✦ Vadodara's Most Trusted Jewellery House</span></div>
+      <h1 class="hero-title serif">
+        Crafting Timeless
+        <strong>Elegance &amp; Trust</strong>
+      </h1>
+      <p class="hero-sub">BIS Hallmarked gold, diamond &amp; silver jewellery — from everyday elegance to bridal grandeur. Visit us at Moghul Wada, Vadodara.</p>
+      <div class="hero-btns">
+        <button class="btn-gold" onclick="showPage('catalogue')">✦ Explore Collection</button>
+        <a href="https://wa.me/919228124181?text=Hello!%20I%20would%20like%20to%20inquire%20about%20your%20jewellery%20collection." target="_blank">
+          <button class="btn-ghost">💬 WhatsApp Inquiry</button>
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span>500+</span><span>Designs</span>
+        </div>
+        <div class="hero-stat">
+          <span>22K</span><span>Pure Gold</span>
+        </div>
+        <div class="hero-stat">
+          <span>BIS</span><span>Hallmarked</span>
+        </div>
+        <div class="hero-stat">
+          <span>30+</span><span>Years Trust</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <div class="cats-bg">
+    <div class="section">
+      <div class="sec-header">
+        <div>
+          <span class="section-label">Collections</span>
+          <h2 class="section-title serif">Shop by Category</h2>
+          <div class="gold-bar"></div>
+        </div>
+        <button class="btn-outline-gold" onclick="showPage('catalogue')">View All →</button>
+      </div>
+      <div class="cat-grid" id="home-cats"></div>
+    </div>
+  </div>
+
+  <div class="separator"></div>
+
+  <!-- FEATURED PRODUCTS -->
+  <div class="section">
+    <div class="sec-header">
+      <div>
+        <span class="section-label">Handpicked</span>
+        <h2 class="section-title serif">Featured Pieces</h2>
+        <div class="gold-bar"></div>
+      </div>
+      <button class="btn-outline-gold" onclick="showPage('catalogue')">View All →</button>
+    </div>
+    <div class="prod-grid" id="home-featured"></div>
+  </div>
+
+  <!-- OCCASIONS -->
+  <div class="cats-bg">
+    <div class="section">
+      <span class="section-label">Occasions</span>
+      <h2 class="section-title serif">Shop by Occasion</h2>
+      <div class="gold-bar" style="margin-bottom:44px"></div>
+      <div class="occ-grid" id="home-occasions"></div>
+    </div>
+  </div>
+
+  <!-- NEW ARRIVALS -->
+  <div class="section">
+    <div class="sec-header">
+      <div>
+        <span class="section-label">Just In</span>
+        <h2 class="section-title serif">New Arrivals</h2>
+        <div class="gold-bar"></div>
+      </div>
+    </div>
+    <div class="prod-grid" id="home-new"></div>
+  </div>
+
+  <!-- TRUST BAND -->
+  <div class="trust-band">
+    <div class="trust-inner" id="trust-items"></div>
+  </div>
+
+  <!-- BEST SELLERS -->
+  <div class="cats-bg">
+    <div class="section">
+      <div class="sec-header">
+        <div>
+          <span class="section-label">Customer Favourites</span>
+          <h2 class="section-title serif">Best Sellers</h2>
+          <div class="gold-bar"></div>
+        </div>
+      </div>
+      <div class="prod-grid" id="home-best"></div>
+    </div>
+  </div>
+
+  <!-- WA CTA BAND -->
+  <div class="wa-band">
+    <h2 class="wa-band-title serif">Have Questions? We're Right Here.</h2>
+    <p class="wa-band-sub">Send us a WhatsApp message for inquiries, custom orders, pricing details, or to book a visit to our store in Vadodara.</p>
+    <a href="https://wa.me/919228124181?text=Hello%20Om%20Arham%20Ornaments!%20I%20want%20to%20inquire%20about%20your%20jewellery." target="_blank">
+      <button class="wa-white-btn">
+        <span style="font-size:22px">💬</span> WhatsApp Us Now
+      </button>
+    </a>
+  </div>
+
+  <!-- CONTACT PREVIEW -->
+  <div class="section">
+    <div class="sec-header">
+      <div>
+        <span class="section-label">Visit Us</span>
+        <h2 class="section-title serif">Our Store</h2>
+        <div class="gold-bar"></div>
+      </div>
+      <button class="btn-outline-gold" onclick="showPage('contact')">Get Directions →</button>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card" id="home-contact-card"></div>
+      <div>
+        <div class="map-box" onclick="window.open('https://maps.google.com/?q=9+Wadi+Rang+Mahal+Vadodara+Gujarat+390017','_blank')">
+          <span class="map-ico">🗺️</span>
+          <span class="map-label">Open in Google Maps</span>
+          <span class="map-sub">9, Wadi Rang Mahal, Moghul Wada, Vadodara</span>
+        </div>
+        <a href="https://instagram.com" target="_blank" style="display:block;margin-top:18px;text-decoration:none">
+          <div style="background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);border-radius:4px;padding:20px 22px;display:flex;align-items:center;gap:14px">
+            <span style="font-size:30px">📸</span>
+            <div>
+              <div style="font-size:14px;font-weight:700;color:#fff;margin-bottom:3px">Follow us on Instagram</div>
+              <div style="font-size:12px;color:rgba(255,255,255,.75)">@omarhamornaments</div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end home page -->
+
+<!-- ══════════════════════════════════════════
+     CATALOGUE PAGE
+══════════════════════════════════════════ -->
+<div id="page-catalogue" class="page" style="padding-top:calc(var(--ticker-h) + var(--nav-h));min-height:100vh">
+  <div style="max-width:1300px;margin:0 auto;padding:40px 28px">
+    <div style="margin-bottom:36px">
+      <span class="section-label">Our Collection</span>
+      <h1 class="section-title serif">Product Catalogue</h1>
+      <div class="gold-bar"></div>
+    </div>
+
+    <!-- Mobile chips -->
+    <div class="mob-chips" id="mob-chips"></div>
+
+    <!-- Toolbar -->
+    <div class="toolbar">
+      <div class="search-wrap">
+        <span class="search-ico">🔍</span>
+        <input type="text" id="search-input" placeholder="Search products, codes, categories…" oninput="renderCatalogue()">
+      </div>
+      <button class="mob-filter-btn" onclick="toggleSidebar()">⚙️ Filters</button>
+      <div class="view-tog">
+        <button class="view-btn on" id="view-grid-btn" onclick="setView('grid')" title="Grid View">⊞</button>
+        <button class="view-btn" id="view-table-btn" onclick="setView('table')" title="Table View">☰</button>
+      </div>
+      <select class="sort-sel" id="sort-sel" onchange="renderCatalogue()">
+        <option value="featured">Featured First</option>
+        <option value="new">New Arrivals First</option>
+        <option value="price-asc">Price: Low to High</option>
+        <option value="price-desc">Price: High to Low</option>
+        <option value="name">Name A–Z</option>
+      </select>
+      <span class="res-count" id="res-count">— products</span>
+    </div>
+
+    <div class="cat-page-layout">
+      <!-- SIDEBAR -->
+      <div class="filter-sidebar" id="filter-sidebar">
+        <div class="filter-ttl serif">Refine</div>
+        <div class="filter-sec">
+          <div class="filter-sec-ttl">Category</div>
+          <div id="filter-cats"></div>
+        </div>
+        <div class="filter-sec">
+          <div class="filter-sec-ttl">Purity / Carat</div>
+          <div id="filter-purities"></div>
+        </div>
+        <div class="filter-sec">
+          <div class="filter-sec-ttl">Price Range (₹)</div>
+          <div class="price-row">
+            <input class="price-inp" type="number" id="price-min" placeholder="Min" oninput="renderCatalogue()">
+            <span style="color:#ccc;font-size:14px">–</span>
+            <input class="price-inp" type="number" id="price-max" placeholder="Max" oninput="renderCatalogue()">
+          </div>
+        </div>
+        <div class="filter-sec">
+          <div class="filter-sec-ttl">Availability &amp; Type</div>
+          <div class="filter-opt"><input type="checkbox" id="f-stock" onchange="renderCatalogue()"><label for="f-stock">In Stock Only</label></div>
+          <div class="filter-opt"><input type="checkbox" id="f-feat" onchange="renderCatalogue()"><label for="f-feat">Featured</label></div>
+          <div class="filter-opt"><input type="checkbox" id="f-new" onchange="renderCatalogue()"><label for="f-new">New Arrivals</label></div>
+          <div class="filter-opt"><input type="checkbox" id="f-best" onchange="renderCatalogue()"><label for="f-best">Best Sellers</label></div>
+        </div>
+        <button class="btn-apply" onclick="renderCatalogue()">Apply Filters</button>
+        <button class="btn-clear" onclick="clearFilters()">✕ Clear All</button>
+      </div>
+
+      <!-- PRODUCT AREA -->
+      <div>
+        <div id="catalogue-output"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     CONTACT PAGE
+══════════════════════════════════════════ -->
+<div id="page-contact" class="page" style="padding-top:calc(var(--ticker-h) + var(--nav-h));min-height:100vh">
+  <div class="section">
+    <span class="section-label">Get in Touch</span>
+    <h1 class="section-title serif">Contact &amp; Directions</h1>
+    <div class="gold-bar" style="margin-bottom:52px"></div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div style="font-family:var(--serif);font-size:26px;font-weight:700;color:var(--gold);margin-bottom:28px">Om Arham Ornaments</div>
+        <div class="contact-row">
+          <div class="contact-ico">📍</div>
+          <div>
+            <div class="contact-lbl">Address</div>
+            <div class="contact-val">9, Wadi Rang Mahal, opp. Harhareshwar Mahadev<br>Moghul Wada, Vadodara, Gujarat 390017</div>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-ico">📞</div>
+          <div>
+            <div class="contact-lbl">Call Us</div>
+            <div class="contact-val"><a href="tel:+919228124181" style="color:var(--gold)">+91 92281 24181</a></div>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-ico">💬</div>
+          <div>
+            <div class="contact-lbl">WhatsApp</div>
+            <div class="contact-val"><a href="https://wa.me/919228124181" target="_blank" style="color:var(--gold)">+91 92281 24181</a></div>
+          </div>
+        </div>
+        <div class="contact-row" style="margin-bottom:0">
+          <div class="contact-ico">🕐</div>
+          <div>
+            <div class="contact-lbl">Store Hours</div>
+            <div class="contact-val">Mon – Sat: 10:00 AM – 8:30 PM<br>Sunday: 11:00 AM – 7:00 PM</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:12px;margin-top:28px;flex-wrap:wrap">
+          <a href="tel:+919228124181" style="flex:1;text-decoration:none">
+            <button class="btn-gold" style="width:100%;justify-content:center">📞 Call Now</button>
+          </a>
+          <a href="https://wa.me/919228124181" target="_blank" style="flex:1;text-decoration:none">
+            <button style="width:100%;background:#25D366;color:#fff;border:none;padding:16px;font-size:14px;font-weight:700;cursor:pointer;border-radius:var(--radius);display:flex;align-items:center;justify-content:center;gap:8px">💬 WhatsApp</button>
+          </a>
+        </div>
+      </div>
+      <div>
+        <div class="map-box" style="height:340px" onclick="window.open('https://maps.google.com/?q=9+Wadi+Rang+Mahal+Vadodara+Gujarat','_blank')">
+          <span class="map-ico">🗺️</span>
+          <span class="map-label">Open in Google Maps</span>
+          <span class="map-sub">Tap to view location in Moghul Wada, Vadodara</span>
+        </div>
+        <div style="margin-top:18px;background:var(--dark);border-radius:var(--radius-md);padding:22px 24px;border:1px solid rgba(210,173,39,.18)">
+          <div style="font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:14px">Trust Certifications</div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
+            <span class="pill pill-gold" style="font-size:12px;padding:6px 14px">🏅 BIS Hallmarked</span>
+            <span class="pill pill-gold" style="font-size:12px;padding:6px 14px">💯 916 Certified</span>
+            <span class="pill pill-gold" style="font-size:12px;padding:6px 14px">✅ IGI Available</span>
+            <span class="pill pill-gold" style="font-size:12px;padding:6px 14px">🔁 Easy Exchange</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     PRODUCT MODAL
+══════════════════════════════════════════ -->
+<div class="modal-bg" id="product-modal">
+  <div class="modal-box">
+    <div class="modal-grid">
+      <div class="modal-img-side">
+        <button class="modal-close-btn" onclick="closeModal()">✕</button>
+        <span class="modal-big-img" id="modal-emoji">💎</span>
+        <div class="modal-thumbs" id="modal-thumbs"></div>
+      </div>
+      <div class="modal-body-side">
+        <div class="modal-code" id="modal-code"></div>
+        <div class="modal-name serif" id="modal-name"></div>
+        <div class="modal-cat-line" id="modal-cats"></div>
+        <div class="modal-price" id="modal-price"></div>
+        <div class="specs-grid" id="modal-specs"></div>
+        <div class="modal-badges" id="modal-badges"></div>
+        <div class="modal-desc" id="modal-desc"></div>
+        <a id="modal-wa-link" href="#" target="_blank">
+          <button class="wa-inquiry-btn">
+            <span style="font-size:22px">💬</span> Inquiry Now via WhatsApp
+          </button>
+        </a>
+        <button class="call-btn" onclick="window.location.href='tel:+919228124181'">
+          📞 Call to Inquire: +91 92281 24181
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ADMIN LOGIN -->
+<div class="admin-overlay" id="admin-overlay">
+  <div class="admin-login-box">
+    <div class="admin-login-logo serif"><span>Om Arham</span> Admin</div>
+    <div class="admin-login-sub">Secure Access Portal</div>
+    <div class="admin-divider"></div>
+    <div class="admin-error hide" id="admin-error"></div>
+    <input class="admin-inp" type="password" id="admin-pw" placeholder="Enter admin password" autocomplete="off" onkeydown="if(event.key==='Enter')adminLogin()">
+    <button class="admin-login-btn" id="admin-login-btn" onclick="adminLogin()">🔒 Access Admin Panel</button>
+    <button class="admin-back-btn" onclick="closeAdminLogin()">← Return to Website</button>
+    <div class="admin-security-note">PROTECTED • AUTHORISED ACCESS ONLY</div>
+  </div>
+</div>
+
+<!-- ADMIN PANEL -->
+<div class="admin-panel-wrap" id="admin-panel">
+  <div class="admin-top-bar">
+    <div class="admin-top-logo serif"><span>Om Arham</span> Admin Panel</div>
+    <button class="admin-exit" onclick="exitAdmin()">← Exit Admin</button>
+  </div>
+  <div class="admin-tabs">
+    <button class="admin-tab on" data-atab="products" onclick="switchAdminTab('products')">📦 Products</button>
+    <button class="admin-tab" data-atab="categories" onclick="switchAdminTab('categories')">🗂️ Categories</button>
+    <button class="admin-tab" data-atab="settings" onclick="switchAdminTab('settings')">⚙️ Settings</button>
+  </div>
+  <div class="admin-content" id="admin-content"></div>
+</div>
+
+<!-- MOBILE BOTTOM NAV -->
+<nav class="bottom-nav">
+  <button class="bn-item on" data-page="home" onclick="showPage('home')">
+    <span class="bn-ico">🏠</span><span class="bn-lbl">Home</span>
+  </button>
+  <button class="bn-item" data-page="catalogue" onclick="showPage('catalogue')">
+    <span class="bn-ico">💎</span><span class="bn-lbl">Catalogue</span>
+  </button>
+  <button class="bn-item" data-page="contact" onclick="showPage('contact')">
+    <span class="bn-ico">📍</span><span class="bn-lbl">Contact</span>
+  </button>
+  <button class="bn-item" onclick="window.open('https://instagram.com','_blank')">
+    <span class="bn-ico">📸</span><span class="bn-lbl">Instagram</span>
+  </button>
+</nav>
+
+<!-- WHATSAPP FLOAT -->
+<a class="wa-float" href="https://wa.me/919228124181?text=Hello%20Om%20Arham%20Ornaments!%20I%20want%20to%20inquire." target="_blank" title="Chat on WhatsApp">💬</a>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo serif"><span>Om Arham</span> Ornaments</div>
+        <div class="footer-tagline">Your trusted jewellery destination in Vadodara since decades. Hallmarked gold, diamond, and silver jewellery crafted for every occasion.</div>
+        <div class="footer-socials">
+          <a class="footer-social" href="https://wa.me/919228124181" target="_blank" style="background:#25D366;font-size:18px">💬</a>
+          <a class="footer-social" href="https://instagram.com" target="_blank" style="background:linear-gradient(135deg,#833ab4,#fd1d1d);font-size:18px">📸</a>
+          <a class="footer-social" href="tel:+919228124181" style="background:var(--gold);font-size:18px">📞</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Collections</div>
+        <div id="footer-cats"></div>
+      </div>
+      <div>
+        <div class="footer-col-title">Quick Links</div>
+        <button class="footer-link" onclick="showPage('home')">Home</button>
+        <button class="footer-link" onclick="showPage('catalogue')">Catalogue</button>
+        <button class="footer-link" onclick="showPage('contact')">Contact Us</button>
+        <a href="https://wa.me/919228124181?text=Hello!%20I%20would%20like%20to%20place%20a%20custom%20jewellery%20order." target="_blank" class="footer-link">Custom Order</a>
+        <button class="footer-link" onclick="showPage('catalogue')">New Arrivals</button>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <div class="footer-addr">
+          9, Wadi Rang Mahal<br>
+          Moghul Wada, Vadodara<br>
+          Gujarat 390017<br><br>
+          <a href="tel:+919228124181">+91 92281 24181</a><br>
+          <a href="https://wa.me/919228124181" target="_blank">WhatsApp Us</a>
+        </div>
+      </div>
+    </div>
+    <hr class="footer-divider">
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2024 Om Arham Ornaments. All rights reserved. BIS Hallmarked.</div>
+      <button class="admin-trigger" onclick="openAdminLogin()">⚙ Admin</button>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ════════════════════════════════════════════════════════
+//  DATA
+// ════════════════════════════════════════════════════════
+var PHONE = '919228124181';
+var PURITIES = ['24K (999.9)', '22K (916)', '18K (750)', '14K (585)', 'Silver 999', 'Silver 925'];
+var CERTS = ['BIS Hallmark', 'IGI Certified', 'GIA Certified', 'Trusted Seller'];
+var HALLMARKS = ['BIS Hallmark', '916 Certified', 'KDM Free', 'Conflict Free', 'Handcrafted'];
+var OCCASIONS = ['Bridal', 'Daily Wear', 'Festive', 'Temple', 'Casual', 'Gift'];
+
+var defaultCategories = [
+  {id:1, name:'Necklaces',   icon:'📿', subcategories:['Traditional','Temple','Daily Wear','Bridal','Chain']},
+  {id:2, name:'Rings',       icon:'💍', subcategories:['Solitaire','Band','Engagement','Cocktail','Finger Ring']},
+  {id:3, name:'Bangles',     icon:'⭕', subcategories:['Traditional','Kadas','Bridal Set','Daily Wear','Stone Bangles']},
+  {id:4, name:'Earrings',    icon:'✨', subcategories:['Jhumka','Studs','Chandbali','Drops','Hoops']},
+  {id:5, name:'Mangalsutra', icon:'🔮', subcategories:['Short','Long','Diamond','Tanmaniya','Traditional']},
+  {id:6, name:'Chains',      icon:'🔗', subcategories:['Box Chain','Rope Chain','Figaro','Rolo','Curb']},
+  {id:7, name:'Bracelets',   icon:'🌟', subcategories:['Kada','Tennis','Charm','Link','Bangle Style']},
+  {id:8, name:'Pendants',    icon:'💎', subcategories:['God','Initial','Stone','Plain','Diamond']},
+];
+
+var defaultProducts = [
+  {id:1,code:'OAO-001',name:'Royal Bridal Necklace',category:'Necklaces',subcategory:'Bridal',purity:'22K (916)',weight:'32.5g',price:185000,stock:2,desc:'Exquisite bridal necklace featuring intricate kundan work with emerald and ruby accents. Crafted by master artisans with traditional Gujarati motifs, perfect for weddings and special occasions.',featured:true,newArrival:false,bestSeller:true,cert:'BIS Hallmark',hallmarks:['BIS Hallmark','916 Certified'],emoji:'📿',occasion:'Bridal',making:12000},
+  {id:2,code:'OAO-002',name:'Solitaire Diamond Ring',category:'Rings',subcategory:'Solitaire',purity:'18K (750)',weight:'4.2g',price:95000,stock:3,desc:'Timeless solitaire ring with a brilliant-cut diamond set in 18K white gold prong setting. Elegance meets precision — ideal for engagements and milestones.',featured:true,newArrival:true,bestSeller:false,cert:'IGI Certified',hallmarks:['BIS Hallmark','KDM Free'],emoji:'💍',occasion:'Daily Wear',making:5500},
+  {id:3,code:'OAO-003',name:'Kundan Jhumka Set',category:'Earrings',subcategory:'Jhumka',purity:'22K (916)',weight:'12.8g',price:42000,stock:5,desc:'Traditional Kundan Jhumka earrings with meenakari work, featuring ruby and pearl drops. A masterpiece of Indian jewellery artistry, perfect for festive wear.',featured:false,newArrival:true,bestSeller:true,cert:'BIS Hallmark',hallmarks:['BIS Hallmark','916 Certified','Handcrafted'],emoji:'✨',occasion:'Festive',making:3500},
+  {id:4,code:'OAO-004',name:'Temple Lakshmi Pendant',category:'Pendants',subcategory:'God',purity:'22K (916)',weight:'8.6g',price:38500,stock:4,desc:'Beautifully crafted Lakshmi pendant with intricate temple jewellery detailing. Blessed and auspicious, revered for both its spiritual significance and artistic beauty.',featured:true,newArrival:false,bestSeller:false,cert:'BIS Hallmark',hallmarks:['BIS Hallmark','Handcrafted'],emoji:'💎',occasion:'Temple',making:2800},
+  {id:5,code:'OAO-005',name:'Diamond Mangalsutra',category:'Mangalsutra',subcategory:'Diamond',purity:'18K (750)',weight:'6.4g',price:68000,stock:6,desc:'Modern diamond mangalsutra with a contemporary design that balances tradition with elegance. Suitable for daily wear with its lightweight and durable 18K gold construction.',featured:true,newArrival:true,bestSeller:true,cert:'IGI Certified',hallmarks:['BIS Hallmark','KDM Free','Conflict Free'],emoji:'🔮',occasion:'Daily Wear',making:4500},
+  {id:6,code:'OAO-006',name:'Bridal Bangle Set (12pc)',category:'Bangles',subcategory:'Bridal Set',purity:'22K (916)',weight:'84.0g',price:320000,stock:1,desc:'Opulent 12-piece bridal bangle set with intricate filigree work and stone settings. Each bangle is handcrafted to create a harmonious ensemble fit for royalty.',featured:false,newArrival:false,bestSeller:false,cert:'BIS Hallmark',hallmarks:['BIS Hallmark','916 Certified','Handcrafted'],emoji:'⭕',occasion:'Bridal',making:28000},
+  {id:7,code:'OAO-007',name:'Rope Chain Necklace',category:'Chains',subcategory:'Rope Chain',purity:'22K (916)',weight:'18.2g',price:76000,stock:8,desc:'Elegant rope chain in 22K gold with a classic twisted design. Versatile enough for daily wear or special occasions, pairs beautifully with any pendant.',featured:false,newArrival:false,bestSeller:true,cert:'BIS Hallmark',hallmarks:['BIS Hallmark','916 Certified'],emoji:'🔗',occasion:'Daily Wear',making:5200},
+  {id:8,code:'OAO-008',name:'Emerald Drop Earrings',category:'Earrings',subcategory:'Drops',purity:'18K (750)',weight:'7.6g',price:55000,stock:3,desc:'Stunning drop earrings featuring natural emerald cabochons set in 18K yellow gold with delicate diamond pavé accents. A statement piece for celebrations.',featured:true,newArrival:true,bestSeller:false,cert:'IGI Certified',hallmarks:['BIS Hallmark','Conflict Free'],emoji:'✨',occasion:'Festive',making:4800},
+  {id:9,code:'OAO-009',name:'Classic Kada Bangles',category:'Bangles',subcategory:'Kadas',purity:'22K (916)',weight:'26.4g',price:98000,stock:5,desc:'Heavy-gauge gold kadas with a plain polished finish and textured border. A timeless classic for daily wear or ceremonies. Available in multiple sizes.',featured:false,newArrival:false,bestSeller:true,cert:'BIS Hallmark',hallmarks:['BIS Hallmark','916 Certified'],emoji:'⭕',occasion:'Daily Wear',making:6800},
+  {id:10,code:'OAO-010',name:'Chandbali Earrings',category:'Earrings',subcategory:'Chandbali',purity:'22K (916)',weight:'9.2g',price:34000,stock:7,desc:'Traditional chandbali earrings with crescent moon design adorned with kundan stones and pearl drops. The quintessential Indian festive earring.',featured:false,newArrival:true,bestSeller:false,cert:'BIS Hallmark',hallmarks:['BIS Hallmark','Handcrafted'],emoji:'✨',occasion:'Festive',making:2600},
+  {id:11,code:'OAO-011',name:'Diamond Tennis Bracelet',category:'Bracelets',subcategory:'Tennis',purity:'18K (750)',weight:'11.4g',price:145000,stock:2,desc:'Exquisite tennis bracelet featuring 45 round brilliant diamonds in bezel setting, totalling 3.2 carats. Elegant, secure, and designed for a lifetime of wear.',featured:true,newArrival:false,bestSeller:true,cert:'IGI Certified',hallmarks:['BIS Hallmark','Conflict Free','KDM Free'],emoji:'🌟',occasion:'Daily Wear',making:9800},
+  {id:12,code:'OAO-012',name:'Short Tanmaniya Set',category:'Mangalsutra',subcategory:'Tanmaniya',purity:'22K (916)',weight:'4.8g',price:22000,stock:10,desc:'Delicate short tanmaniya with traditional vati design in polished 22K gold. Comfortable for daily wear with adjustable chain length.',featured:false,newArrival:true,bestSeller:false,cert:'BIS Hallmark',hallmarks:['BIS Hallmark','916 Certified'],emoji:'🔮',occasion:'Daily Wear',making:1500},
+  {id:13,code:'OAO-013',name:'Initial Letter Ring',category:'Rings',subcategory:'Band',purity:'18K (750)',weight:'3.1g',price:18500,stock:12,desc:'Personalized initial letter ring in brushed 18K gold. A thoughtful gift and stylish everyday statement. Available for all letters, custom orders welcome.',featured:false,newArrival:true,bestSeller:false,cert:'BIS Hallmark',hallmarks:['BIS Hallmark'],emoji:'💍',occasion:'Daily Wear',making:1200},
+  {id:14,code:'OAO-014',name:'Temple Necklace Set',category:'Necklaces',subcategory:'Temple',purity:'22K (916)',weight:'45.6g',price:195000,stock:1,desc:'Grand temple jewellery necklace set with matching earrings and maang tikka. Features traditional deity motifs with ruby and emerald accents.',featured:true,newArrival:false,bestSeller:false,cert:'BIS Hallmark',hallmarks:['BIS Hallmark','916 Certified','Handcrafted'],emoji:'📿',occasion:'Temple',making:16000},
+  {id:15,code:'OAO-015',name:'Figaro Gold Chain',category:'Chains',subcategory:'Figaro',purity:'22K (916)',weight:'14.5g',price:62000,stock:6,desc:'Classic Figaro chain in 22K hallmarked gold. Versatile design that suits both men and women. Smooth texture with secure lobster clasp.',featured:false,newArrival:false,bestSeller:true,cert:'BIS Hallmark',hallmarks:['BIS Hallmark','916 Certified'],emoji:'🔗',occasion:'Daily Wear',making:4200},
+];
+
+// ── STATE ──
+var state = {
+  products: JSON.parse(localStorage.getItem('oao_products') || 'null') || defaultProducts,
+  categories: JSON.parse(localStorage.getItem('oao_categories') || 'null') || defaultCategories,
+  deletedCodes: JSON.parse(localStorage.getItem('oao_deleted_codes') || '[]'),
+  currentPage: 'home',
+  viewMode: 'grid',
+  adminTab: 'products',
+  filterCats: [],
+  filterPurities: [],
+  sidebarOpen: false,
+  editingProduct: null,
+  adminAttempts: 0,
+};
+function save(){
+  localStorage.setItem('oao_products', JSON.stringify(state.products));
+  localStorage.setItem('oao_categories', JSON.stringify(state.categories));
+  localStorage.setItem('oao_deleted_codes', JSON.stringify(state.deletedCodes));
+}
+
+// ── UTILS ──
+function fmt(n){return new Intl.NumberFormat('en-IN').format(n)}
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+function q(sel){return document.querySelector(sel)}
+function qa(sel){return document.querySelectorAll(sel)}
+
+// ════════════════════════════════════════════════════════
+//  HERO CANVAS
+// ════════════════════════════════════════════════════════
+function initHeroCanvas(){
+  var c = document.getElementById('hero-canvas');
+  if(!c) return;
+  var ctx = c.getContext('2d');
+  var W,H,gems;
+  function resize(){
+    W = c.width = c.offsetWidth;
+    H = c.height = c.offsetHeight;
+    gems = [];
+    for(var i=0;i<14;i++){
+      gems.push({
+        x:Math.random()*W, y:Math.random()*H,
+        r: 18+Math.random()*55,
+        ang: Math.random()*Math.PI*2,
+        spd: (0.003+Math.random()*.009)*(Math.random()>.5?1:-1),
+        phase: Math.random()*Math.PI*2,
+        float: 0.4+Math.random()*.8,
+        sides: [4,6,8,3][Math.floor(Math.random()*4)],
+        op: .2+Math.random()*.5,
+      });
+    }
+  }
+  resize();
+  window.addEventListener('resize',resize);
+  var t=0;
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    t += .008;
+    gems.forEach(function(g){
+      ctx.save();
+      var fy = g.y + Math.sin(t*g.float+g.phase)*22;
+      ctx.translate(g.x, fy);
+      ctx.rotate(g.ang + t*g.spd*8);
+      ctx.beginPath();
+      for(var i=0;i<g.sides;i++){
+        var a = (i/g.sides)*Math.PI*2 - Math.PI/g.sides;
+        var r1 = g.r, r2 = g.r*.5;
+        ctx.lineTo(Math.cos(a)*r1, Math.sin(a)*r1);
+        var a2 = a + Math.PI/g.sides;
+        ctx.lineTo(Math.cos(a2)*r2, Math.sin(a2)*r2);
+      }
+      ctx.closePath();
+      ctx.strokeStyle = 'rgba(210,173,39,'+g.op+')';
+      ctx.lineWidth = 1.2;
+      ctx.stroke();
+      ctx.fillStyle = 'rgba(210,173,39,'+(g.op*.12)+')';
+      ctx.fill();
+      ctx.restore();
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
+}
+
+// ════════════════════════════════════════════════════════
+//  TICKER
+// ════════════════════════════════════════════════════════
+function initTicker(){
+  var items = ['BIS Hallmarked Gold','22K & 18K Certified','Free Delivery in Vadodara','Bridal Collections Available','Custom Jewellery on Order','Trusted Since Decades','Exchange Policy Available','IGI Certified Diamonds'];
+  var track = document.getElementById('ticker-track');
+  var html = '';
+  for(var k=0;k<4;k++) items.forEach(function(t){html+='<span class="ticker-item">'+esc(t)+'</span>';});
+  track.innerHTML = html;
+}
+
+// ════════════════════════════════════════════════════════
+//  PAGE ROUTING
+// ════════════════════════════════════════════════════════
+function showPage(p){
+  state.currentPage = p;
+  qa('.page').forEach(function(el){el.classList.remove('active')});
+  var pg = document.getElementById('page-'+p);
+  if(pg){pg.classList.add('active');window.scrollTo(0,0);}
+  // nav links
+  qa('.nav-link').forEach(function(el){el.classList.toggle('active',el.dataset.page===p)});
+  qa('.mob-link').forEach(function(el){el.classList.toggle('active',el.dataset.page===p)});
+  qa('.bn-item[data-page]').forEach(function(el){el.classList.toggle('on',el.dataset.page===p)});
+  if(p==='catalogue') renderCatalogue();
+}
+
+// ════════════════════════════════════════════════════════
+//  HOME PAGE RENDER
+// ════════════════════════════════════════════════════════
+function renderHome(){
+  // Categories
+  var catEl = document.getElementById('home-cats');
+  if(catEl) catEl.innerHTML = state.categories.map(function(c){
+    var cnt = state.products.filter(function(p){return p.category===c.name}).length;
+    return '<div class="cat-card" onclick="filterByCat(\''+esc(c.name)+'\')">'+
+      '<span class="cat-icon">'+c.icon+'</span>'+
+      '<div class="cat-name serif">'+esc(c.name)+'</div>'+
+      '<div class="cat-cnt">'+cnt+' items</div>'+
+      '</div>';
+  }).join('');
+
+  // Footer cats
+  var fcEl = document.getElementById('footer-cats');
+  if(fcEl) fcEl.innerHTML = state.categories.slice(0,6).map(function(c){
+    return '<button class="footer-link" onclick="filterByCat(\''+esc(c.name)+'\')">'+c.icon+' '+esc(c.name)+'</button>';
+  }).join('');
+
+  // Featured
+  var featEl = document.getElementById('home-featured');
+  if(featEl){
+    var feat = state.products.filter(function(p){return p.featured}).slice(0,4);
+    featEl.innerHTML = feat.map(productCardHTML).join('');
+  }
+
+  // New arrivals
+  var newEl = document.getElementById('home-new');
+  if(newEl){
+    var news = state.products.filter(function(p){return p.newArrival}).slice(0,4);
+    newEl.innerHTML = news.map(productCardHTML).join('');
+  }
+
+  // Best sellers
+  var bestEl = document.getElementById('home-best');
+  if(bestEl){
+    var best = state.products.filter(function(p){return p.bestSeller}).slice(0,4);
+    bestEl.innerHTML = best.map(productCardHTML).join('');
+  }
+
+  // Trust band
+  var trustEl = document.getElementById('trust-items');
+  if(trustEl){
+    var trusts = [
+      {ico:'🏅',lbl:'BIS Hallmarked',txt:'All gold jewellery carries BIS hallmark for guaranteed purity.'},
+      {ico:'💯',lbl:'100% Authentic',txt:'We sell only certified, genuine gold and diamond jewellery.'},
+      {ico:'🤝',lbl:'Decades of Trust',txt:'Serving Vadodara families for generations with integrity.'},
+      {ico:'🚚',lbl:'Home Delivery',txt:'Free secure delivery in Vadodara on orders above ₹10,000.'},
+      {ico:'🔁',lbl:'Easy Exchange',txt:'Transparent exchange and buyback on all our jewellery.'},
+    ];
+    trustEl.innerHTML = trusts.map(function(t){
+      return '<div class="trust-item"><span class="trust-ico">'+t.ico+'</span>'+
+        '<div class="trust-lbl serif">'+t.lbl+'</div>'+
+        '<div class="trust-txt">'+t.txt+'</div></div>';
+    }).join('');
+  }
+
+  // Occasions
+  var occEl = document.getElementById('home-occasions');
+  if(occEl){
+    var occs = [
+      {name:'Bridal',sub:'Grand & Opulent',emoji:'👰',bg:'#2d1a0e'},
+      {name:'Festive',sub:'Vibrant & Joyful',emoji:'🪔',bg:'#1a0d0d'},
+      {name:'Temple',sub:'Sacred & Blessed',emoji:'🛕',bg:'#0d160d'},
+      {name:'Daily Wear',sub:'Light & Elegant',emoji:'☀️',bg:'#0d0d1a'},
+      {name:'Gifts',sub:'Thoughtful & Pure',emoji:'🎁',bg:'#1a1a0d'},
+      {name:'Casual',sub:'Modern & Minimal',emoji:'💫',bg:'#1a0d1a'},
+    ];
+    occEl.innerHTML = occs.map(function(o){
+      return '<div class="occ-card" onclick="filterByOcc(\''+esc(o.name)+'\')">'+
+        '<div class="occ-bg" style="background:'+o.bg+'">'+o.emoji+'</div>'+
+        '<div class="occ-shade"></div>'+
+        '<div class="occ-lbl">'+
+          '<div class="occ-name serif">'+esc(o.name)+'</div>'+
+          '<div class="occ-sub">'+esc(o.sub)+'</div>'+
+        '</div></div>';
+    }).join('');
+  }
+
+  // Contact card
+  var ccEl = document.getElementById('home-contact-card');
+  if(ccEl) ccEl.innerHTML = contactCardHTML();
+}
+
+function contactCardHTML(){
+  return '<div style="font-family:var(--serif);font-size:22px;font-weight:700;color:var(--gold);margin-bottom:24px">Om Arham Ornaments</div>'+
+    contactRow('📍','Address','9, Wadi Rang Mahal, opp. Harhareshwar Mahadev<br>Moghul Wada, Vadodara, Gujarat 390017')+
+    contactRow('📞','Call Us','<a href="tel:+919228124181" style="color:var(--gold)">+91 92281 24181</a>')+
+    contactRow('💬','WhatsApp','<a href="https://wa.me/919228124181" target="_blank" style="color:var(--gold)">+91 92281 24181</a>')+
+    contactRow('🕐','Hours','Mon–Sat: 10 AM – 8:30 PM<br>Sunday: 11 AM – 7 PM')+
+    '<div style="display:flex;gap:12px;margin-top:24px;flex-wrap:wrap">'+
+    '<a href="tel:+919228124181" style="flex:1;text-decoration:none"><button class="btn-gold" style="width:100%;justify-content:center;font-size:13px">📞 Call Now</button></a>'+
+    '<a href="https://wa.me/919228124181" target="_blank" style="flex:1;text-decoration:none"><button style="width:100%;background:#25D366;color:#fff;border:none;padding:15px;font-size:13px;font-weight:700;cursor:pointer;border-radius:var(--radius);display:flex;align-items:center;justify-content:center;gap:8px">💬 WhatsApp</button></a>'+
+    '</div>';
+}
+function contactRow(ico,lbl,val){
+  return '<div class="contact-row">'+
+    '<div class="contact-ico">'+ico+'</div>'+
+    '<div><div class="contact-lbl">'+lbl+'</div><div class="contact-val">'+val+'</div></div>'+
+    '</div>';
+}
+
+// ════════════════════════════════════════════════════════
+//  PRODUCT CARD HTML
+// ════════════════════════════════════════════════════════
+function productCardHTML(p){
+  var badges = '';
+  if(p.featured) badges += '<span class="badge-feat">Featured</span>';
+  if(p.newArrival) badges += '<span class="badge-new">New</span>';
+  if(p.bestSeller) badges += '<span class="badge-bs">★ Best Seller</span>';
+  return '<div class="prod-card" onclick="openProduct('+p.id+')">'+
+    '<div class="prod-img-wrap">'+
+      '<div class="prod-badges">'+badges+'</div>'+
+      '<span style="font-size:72px;line-height:1;display:block;filter:drop-shadow(0 8px 20px rgba(26,18,9,.18))">'+p.emoji+'</span>'+
+    '</div>'+
+    '<div class="prod-body">'+
+      '<div class="prod-code"># '+esc(p.code)+'</div>'+
+      '<div class="prod-name serif">'+esc(p.name)+'</div>'+
+      '<div class="prod-sub">'+esc(p.category)+' · '+esc(p.subcategory||'')+'</div>'+
+      '<div class="prod-foot">'+
+        '<div class="prod-price">₹'+fmt(p.price)+'</div>'+
+        '<div class="prod-purity">'+esc(p.purity)+'</div>'+
+      '</div>'+
+      '<div class="prod-stock-row">'+
+        '<span class="prod-stock'+(p.stock===0?' out':'')+'">'+
+          (p.stock===0?'✕ Out of Stock':'✓ '+p.stock+' in stock')+
+        '</span>'+
+        '<span class="prod-wt">'+esc(p.weight)+'</span>'+
+      '</div>'+
+    '</div>'+
+  '</div>';
+}
+
+// ════════════════════════════════════════════════════════
+//  CATALOGUE
+// ════════════════════════════════════════════════════════
+function initCatalogueFilters(){
+  var catEl = document.getElementById('filter-cats');
+  if(!catEl) return;
+  catEl.innerHTML = state.categories.map(function(c){
+    var cnt = state.products.filter(function(p){return p.category===c.name}).length;
+    return '<div class="filter-opt">'+
+      '<input type="checkbox" id="fc-'+c.id+'" value="'+esc(c.name)+'" onchange="renderCatalogue()">'+
+      '<label for="fc-'+c.id+'">'+c.icon+' '+esc(c.name)+'</label>'+
+      '<span class="fcnt">('+cnt+')</span>'+
+    '</div>';
+  }).join('');
+
+  var purEl = document.getElementById('filter-purities');
+  if(purEl){
+    var purities = [...new Set(state.products.map(function(p){return p.purity}))];
+    purEl.innerHTML = purities.map(function(pu,i){
+      return '<div class="filter-opt">'+
+        '<input type="checkbox" id="fp-'+i+'" value="'+esc(pu)+'" onchange="renderCatalogue()">'+
+        '<label for="fp-'+i+'">'+esc(pu)+'</label>'+
+      '</div>';
+    }).join('');
+  }
+
+  // Mobile chips
+  var chips = document.getElementById('mob-chips');
+  if(chips){
+    chips.innerHTML = '<button class="mob-chip on" onclick="clearCatChips(this)">All</button>'+
+      state.categories.map(function(c){
+        return '<button class="mob-chip" onclick="setCatChip(this,\''+esc(c.name)+'\')">'+c.icon+' '+esc(c.name)+'</button>';
+      }).join('');
+  }
+}
+
+function clearCatChips(el){
+  qa('.mob-chip').forEach(function(b){b.classList.remove('on')});
+  el.classList.add('on');
+  qa('#filter-cats input[type=checkbox]').forEach(function(cb){cb.checked=false});
+  renderCatalogue();
+}
+function setCatChip(el,cat){
+  qa('.mob-chip').forEach(function(b){b.classList.remove('on')});
+  el.classList.add('on');
+  qa('#filter-cats input[type=checkbox]').forEach(function(cb){cb.checked = cb.value===cat});
+  renderCatalogue();
+}
+
+function getFilteredProducts(){
+  var search = (q('#search-input')||{}).value||'';
+  var sort = (q('#sort-sel')||{}).value||'featured';
+  var pMin = parseFloat((q('#price-min')||{}).value)||0;
+  var pMax = parseFloat((q('#price-max')||{}).value)||Infinity;
+  var fStock = (q('#f-stock')||{}).checked;
+  var fFeat = (q('#f-feat')||{}).checked;
+  var fNew = (q('#f-new')||{}).checked;
+  var fBest = (q('#f-best')||{}).checked;
+
+  var selCats = [];
+  qa('#filter-cats input:checked').forEach(function(cb){selCats.push(cb.value)});
+  var selPurs = [];
+  qa('#filter-purities input:checked').forEach(function(cb){selPurs.push(cb.value)});
+
+  var filtered = state.products.filter(function(p){
+    if(search){
+      var s = search.toLowerCase();
+      if(p.name.toLowerCase().indexOf(s)<0 && p.code.toLowerCase().indexOf(s)<0 && p.category.toLowerCase().indexOf(s)<0 && (p.subcategory||'').toLowerCase().indexOf(s)<0) return false;
+    }
+    if(selCats.length && selCats.indexOf(p.category)<0) return false;
+    if(selPurs.length && selPurs.indexOf(p.purity)<0) return false;
+    if(fStock && p.stock===0) return false;
+    if(fFeat && !p.featured) return false;
+    if(fNew && !p.newArrival) return false;
+    if(fBest && !p.bestSeller) return false;
+    if(p.price < pMin) return false;
+    if(p.price > pMax) return false;
+    return true;
+  });
+
+  filtered.sort(function(a,b){
+    if(sort==='price-asc') return a.price-b.price;
+    if(sort==='price-desc') return b.price-a.price;
+    if(sort==='new') return (b.newArrival?1:0)-(a.newArrival?1:0);
+    if(sort==='name') return a.name.localeCompare(b.name);
+    return (b.featured?1:0)-(a.featured?1:0);
+  });
+  return filtered;
+}
+
+function renderCatalogue(){
+  var products = getFilteredProducts();
+  var out = document.getElementById('catalogue-output');
+  if(!out) return;
+  var cnt = document.getElementById('res-count');
+  if(cnt) cnt.textContent = products.length + ' product'+(products.length!==1?'s':'');
+
+  if(products.length===0){
+    out.innerHTML = '<div class="empty-state"><span class="empty-ico">🔍</span><div class="empty-ttl">No products found</div><div class="empty-sub">Try adjusting your search or filters.</div></div>';
+    return;
+  }
+
+  if(state.viewMode==='grid'){
+    out.innerHTML = '<div class="prod-grid">'+products.map(productCardHTML).join('')+'</div>';
+  } else {
+    out.innerHTML = '<div class="tbl-wrap"><table class="prod-tbl">'+
+      '<thead><tr>'+
+        '<th>Code</th><th>Product</th><th>Category</th><th>Purity</th><th>Weight</th><th>Price</th><th>Stock</th><th>Inquire</th>'+
+      '</tr></thead>'+
+      '<tbody>'+products.map(function(p){
+        return '<tr onclick="openProduct('+p.id+')">'+
+          '<td><span class="code-tag">'+esc(p.code)+'</span></td>'+
+          '<td>'+
+            '<div style="display:flex;align-items:center;gap:10px">'+
+              '<span style="font-size:26px">'+p.emoji+'</span>'+
+              '<div>'+
+                '<div class="tbl-name serif">'+esc(p.name)+'</div>'+
+                '<div class="tbl-sub">'+esc(p.subcategory||'')+'  ·  '+esc(p.occasion||'')+'</div>'+
+              '</div>'+
+            '</div>'+
+          '</td>'+
+          '<td><span class="pill pill-gold">'+esc(p.category)+'</span></td>'+
+          '<td style="font-size:13px;color:var(--text2)">'+esc(p.purity)+'</td>'+
+          '<td style="font-size:13px">'+esc(p.weight)+'</td>'+
+          '<td><span style="font-family:var(--serif);font-size:17px;font-weight:700;color:var(--gold)">₹'+fmt(p.price)+'</span></td>'+
+          '<td><span class="pill '+(p.stock>0?'pill-green':'pill-red')+'">'+
+            (p.stock>0?p.stock+' pcs':'Out')+
+          '</span></td>'+
+          '<td onclick="event.stopPropagation()">'+
+            '<a href="https://wa.me/'+PHONE+'?text='+encodeURIComponent('Hi! I\'m interested in '+p.name+' ('+p.code+'). Price: ₹'+fmt(p.price))+'" target="_blank">'+
+              '<button style="background:#25D366;color:#fff;border:none;padding:8px 14px;border-radius:3px;font-size:13px;cursor:pointer;font-weight:700">💬</button>'+
+            '</a>'+
+          '</td>'+
+        '</tr>';
+      }).join('')+'</tbody></table></div>';
+  }
+}
+
+function setView(v){
+  state.viewMode = v;
+  q('#view-grid-btn').classList.toggle('on',v==='grid');
+  q('#view-table-btn').classList.toggle('on',v==='table');
+  renderCatalogue();
+}
+function toggleSidebar(){
+  state.sidebarOpen = !state.sidebarOpen;
+  var sb = document.getElementById('filter-sidebar');
+  if(sb) sb.classList.toggle('mob-open',state.sidebarOpen);
+}
+function clearFilters(){
+  qa('#filter-cats input').forEach(function(cb){cb.checked=false});
+  qa('#filter-purities input').forEach(function(cb){cb.checked=false});
+  var pi = q('#price-min'); if(pi) pi.value='';
+  var pa = q('#price-max'); if(pa) pa.value='';
+  var fs = q('#f-stock'); if(fs) fs.checked=false;
+  var ff = q('#f-feat'); if(ff) ff.checked=false;
+  var fn = q('#f-new'); if(fn) fn.checked=false;
+  var fb = q('#f-best'); if(fb) fb.checked=false;
+  var si = q('#search-input'); if(si) si.value='';
+  qa('.mob-chip').forEach(function(b,i){b.classList.toggle('on',i===0)});
+  renderCatalogue();
+}
+function filterByCat(cat){
+  showPage('catalogue');
+  setTimeout(function(){
+    qa('#filter-cats input').forEach(function(cb){cb.checked=cb.value===cat});
+    qa('.mob-chip').forEach(function(b){b.classList.toggle('on',b.textContent.indexOf(cat)>=0)});
+    renderCatalogue();
+  },100);
+}
+function filterByOcc(occ){
+  showPage('catalogue');
+  setTimeout(function(){
+    var si = q('#search-input'); if(si){si.value=occ;}
+    renderCatalogue();
+  },100);
+}
+
+// ════════════════════════════════════════════════════════
+//  PRODUCT MODAL
+// ════════════════════════════════════════════════════════
+function openProduct(id){
+  var p = state.products.find(function(x){return x.id===id});
+  if(!p) return;
+  var modal = document.getElementById('product-modal');
+  q('#modal-emoji').textContent = p.emoji;
+  q('#modal-code').textContent = '# '+p.code;
+  q('#modal-name').textContent = p.name;
+  q('#modal-cats').innerHTML =
+    '<span>'+esc(p.category)+'</span>'+
+    (p.subcategory?'<span>'+esc(p.subcategory)+'</span>':'')+
+    (p.occasion?'<span>'+esc(p.occasion)+'</span>':'');
+  q('#modal-price').textContent = '₹'+fmt(p.price);
+  q('#modal-specs').innerHTML = [
+    {lbl:'Purity',val:p.purity},
+    {lbl:'Weight',val:p.weight},
+    {lbl:'Stock',val:p.stock>0?p.stock+' Available':'Out of Stock',c:p.stock>0?'#2e7d32':'var(--red)'},
+    {lbl:'Making Charge',val:'₹'+fmt(p.making||0)},
+  ].map(function(s){
+    return '<div class="spec-box">'+
+      '<div class="spec-lbl">'+s.lbl+'</div>'+
+      '<div class="spec-val"'+(s.c?' style="color:'+s.c+'"':'')+'>'+esc(String(s.val))+'</div>'+
+    '</div>';
+  }).join('');
+  q('#modal-badges').innerHTML =
+    (p.hallmarks||[]).map(function(h){return '<span class="m-badge">✦ '+esc(h)+'</span>'}).join('')+
+    (p.cert?'<span class="m-badge cert">🏅 '+esc(p.cert)+'</span>':'');
+  q('#modal-desc').textContent = p.desc||'';
+  q('#modal-thumbs').innerHTML = [p.emoji,'✨','💫'].map(function(e,i){
+    return '<div class="modal-thumb'+(i===0?' on':'')+'">'+e+'</div>';
+  }).join('');
+  var waMsg = 'Hello Om Arham Ornaments! 🙏\n\nI am interested in:\n📦 Code: '+p.code+'\n💎 Name: '+p.name+'\n🏷️ Category: '+p.category+(p.subcategory?' > '+p.subcategory:'')+'\n⚖️ Purity: '+p.purity+' | Weight: '+p.weight+'\n💰 Price: ₹'+fmt(p.price)+'\n📋 Certification: '+(p.cert||'N/A')+'\n\nPlease share availability and delivery details.\n\nThank you!';
+  q('#modal-wa-link').href = 'https://wa.me/'+PHONE+'?text='+encodeURIComponent(waMsg);
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(){
+  document.getElementById('product-modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.getElementById('product-modal').addEventListener('click',function(e){
+  if(e.target===this) closeModal();
+});
+
+// ════════════════════════════════════════════════════════
+//  MOBILE MENU
+// ════════════════════════════════════════════════════════
+function toggleMobileMenu(){
+  var m = document.getElementById('mobile-menu');
+  var h = document.getElementById('hamburger');
+  m.classList.toggle('open');
+  h.classList.toggle('open');
+}
+function closeMobileMenu(){
+  document.getElementById('mobile-menu').classList.remove('open');
+  document.getElementById('hamburger').classList.remove('open');
+}
+
+// ════════════════════════════════════════════════════════
+//  ADMIN
+// ════════════════════════════════════════════════════════
+var ADMIN_SECRET = 'OmArham@2024#Secure';
+
+function openAdminLogin(){
+  document.getElementById('admin-overlay').classList.add('open');
+  document.body.style.overflow='hidden';
+  state.adminAttempts = 0;
+}
+function closeAdminLogin(){
+  document.getElementById('admin-overlay').classList.remove('open');
+  document.body.style.overflow='';
+  q('#admin-pw').value='';
+  q('#admin-error').classList.add('hide');
+  q('#admin-login-btn').disabled=false;
+}
+function adminLogin(){
+  if(state.adminAttempts>=5){showAdminError('Access locked after too many attempts.');return;}
+  var pw = q('#admin-pw').value;
+  if(pw===ADMIN_SECRET){
+    closeAdminLogin();
+    openAdminPanel();
+  } else {
+    state.adminAttempts++;
+    var left = 5-state.adminAttempts;
+    showAdminError('Incorrect password. '+(left>0?left+' attempts remaining.':'Access locked.'));
+    q('#admin-pw').value='';
+    if(left<=0) q('#admin-login-btn').disabled=true;
+  }
+}
+function showAdminError(msg){
+  var el = q('#admin-error');
+  el.textContent='⚠ '+msg;
+  el.classList.remove('hide');
+}
+function openAdminPanel(){
+  document.getElementById('admin-panel').classList.add('open');
+  document.body.style.overflow='';
+  renderAdminContent();
+}
+function exitAdmin(){
+  document.getElementById('admin-panel').classList.remove('open');
+  renderHome();
+}
+function switchAdminTab(tab){
+  state.adminTab = tab;
+  qa('.admin-tab').forEach(function(b){b.classList.toggle('on',b.dataset.atab===tab)});
+  renderAdminContent();
+}
+
+function getNextCode(){
+  var allNums = state.products.map(function(p){return parseInt(p.code.split('-')[1])||0});
+  state.deletedCodes.forEach(function(n){allNums.push(n)});
+  var max = allNums.length>0?Math.max.apply(null,allNums):0;
+  return 'OAO-'+String(max+1).padStart(3,'0');
+}
+
+function renderAdminContent(){
+  var ac = document.getElementById('admin-content');
+  if(!ac) return;
+  if(state.adminTab==='products') ac.innerHTML = buildProductsAdmin();
+  else if(state.adminTab==='categories') ac.innerHTML = buildCategoriesAdmin();
+  else if(state.adminTab==='settings') ac.innerHTML = buildSettingsAdmin();
+  bindAdminEvents();
+}
+
+// ── PRODUCTS ADMIN ──
+function buildProductsAdmin(){
+  var rows = state.products.map(function(p){
+    return '<tr>'+
+      '<td><span class="code-tag">'+esc(p.code)+'</span></td>'+
+      '<td>'+
+        '<div style="font-size:14px;font-weight:700;color:var(--dark)">'+esc(p.name)+'</div>'+
+        '<div style="font-size:11px;color:var(--text3)">'+esc(p.subcategory||'')+'</div>'+
+      '</td>'+
+      '<td><span class="pill pill-gold">'+esc(p.category)+'</span></td>'+
+      '<td style="font-size:13px">'+esc(p.purity)+'</td>'+
+      '<td style="font-size:14px;font-weight:700;color:var(--gold)">₹'+fmt(p.price)+'</td>'+
+      '<td><span class="pill '+(p.stock>0?'pill-green':'pill-red')+'">'+p.stock+'</span></td>'+
+      '<td>'+
+        '<div style="display:flex;gap:8px">'+
+          '<button class="abtn abtn-outline" onclick="adminEditProduct('+p.id+')">Edit</button>'+
+          '<button class="abtn abtn-red" style="padding:8px 12px" onclick="adminDeleteProduct('+p.id+',\''+esc(p.code)+'\')">✕</button>'+
+        '</div>'+
+      '</td>'+
+    '</tr>';
+  }).join('');
+
+  return '<div class="admin-section-head">'+
+    '<div><div class="admin-section-title serif">Products</div><div class="admin-section-sub">'+state.products.length+' products listed</div></div>'+
+    '<button class="abtn abtn-dark" onclick="adminAddProduct()">+ Add Product</button>'+
+  '</div>'+
+  '<div id="admin-product-form"></div>'+
+  '<div class="acard"><div class="acard-head"><div class="acard-title">All Products</div></div>'+
+  '<div style="overflow-x:auto"><table class="admin-tbl">'+
+  '<thead><tr><th>Code</th><th>Name</th><th>Category</th><th>Purity</th><th>Price</th><th>Stock</th><th>Actions</th></tr></thead>'+
+  '<tbody>'+rows+'</tbody>'+
+  '</table></div></div>';
+}
+
+function getCatSubcatOptions(selCat,selSub){
+  var catOpts = state.categories.map(function(c){
+    return '<option value="'+esc(c.name)+'"'+(c.name===selCat?' selected':'')+'>'+esc(c.name)+'</option>';
+  }).join('');
+  var selCatObj = state.categories.find(function(c){return c.name===selCat});
+  var subcats = selCatObj?selCatObj.subcategories:[];
+  var subOpts = subcats.map(function(s){
+    return '<option value="'+esc(s)+'"'+(s===selSub?' selected':'')+'>'+esc(s)+'</option>';
+  }).join('');
+  return {catOpts:catOpts,subOpts:subOpts};
+}
+
+function buildProductForm(p){
+  var isEdit = !!p;
+  var d = p || {name:'',category:'',subcategory:'',purity:'22K (916)',weight:'',price:'',stock:'',desc:'',cert:'BIS Hallmark',hallmarks:[],occasion:'',featured:false,newArrival:false,bestSeller:false,emoji:'💎',making:''};
+  var opts = getCatSubcatOptions(d.category,d.subcategory);
+  var purOpts = PURITIES.map(function(pu){return '<option value="'+esc(pu)+'"'+(pu===d.purity?' selected':'')+'>'+esc(pu)+'</option>'}).join('');
+  var certOpts = CERTS.map(function(c){return '<option value="'+esc(c)+'"'+(c===d.cert?' selected':'')+'>'+esc(c)+'</option>'}).join('');
+  var occOpts = OCCASIONS.map(function(o){return '<option value="'+esc(o)+'"'+(o===d.occasion?' selected':'')+'>'+esc(o)+'</option>'}).join('');
+  var hallHtml = HALLMARKS.map(function(h){
+    return '<label class="halm-cb"><input type="checkbox" name="hallmark" value="'+esc(h)+'"'+(d.hallmarks&&d.hallmarks.indexOf(h)>=0?' checked':'')+' style="accent-color:var(--gold);width:14px;height:14px">'+esc(h)+'</label>';
+  }).join('');
+
+  return '<div class="acard" id="product-form-box">'+
+    '<div class="acard-head">'+
+      '<div class="acard-title">'+(isEdit?'Edit: '+esc(d.name):'Add New Product')+'</div>'+
+      '<button class="abtn abtn-red" onclick="cancelProductForm()">Cancel</button>'+
+    '</div>'+
+    '<div class="acard-body">'+
+      (isEdit?'<input type="hidden" id="pf-id" value="'+d.id+'">':'')+
+      '<div class="aform-row">'+
+        '<div class="aform-group"><label class="aform-label">Product Name *</label><input class="aform-input" id="pf-name" value="'+esc(d.name)+'" placeholder="e.g. Royal Bridal Necklace"></div>'+
+        '<div class="aform-group"><label class="aform-label">Emoji / Icon</label><input class="aform-input" id="pf-emoji" value="'+esc(d.emoji)+'" placeholder="💎" style="font-size:20px"></div>'+
+      '</div>'+
+      '<div class="aform-row">'+
+        '<div class="aform-group"><label class="aform-label">Category *</label><select class="aform-select" id="pf-cat" onchange="updateSubcatOptions()"><option value="">Select Category</option>'+opts.catOpts+'</select></div>'+
+        '<div class="aform-group"><label class="aform-label">Subcategory</label><select class="aform-select" id="pf-subcat"><option value="">Select Subcategory</option>'+opts.subOpts+'</select></div>'+
+      '</div>'+
+      '<div class="aform-row">'+
+        '<div class="aform-group"><label class="aform-label">Purity / Carat</label><select class="aform-select" id="pf-purity">'+purOpts+'</select></div>'+
+        '<div class="aform-group"><label class="aform-label">Weight</label><input class="aform-input" id="pf-weight" value="'+esc(d.weight)+'" placeholder="e.g. 12.5g"></div>'+
+      '</div>'+
+      '<div class="aform-row">'+
+        '<div class="aform-group"><label class="aform-label">Price (₹) *</label><input class="aform-input" id="pf-price" type="number" value="'+esc(d.price||'')+'" placeholder="85000"></div>'+
+        '<div class="aform-group"><label class="aform-label">Making Charge (₹)</label><input class="aform-input" id="pf-making" type="number" value="'+esc(d.making||'')+'" placeholder="5500"></div>'+
+      '</div>'+
+      '<div class="aform-row">'+
+        '<div class="aform-group"><label class="aform-label">Stock Quantity</label><input class="aform-input" id="pf-stock" type="number" value="'+esc(d.stock||'')+'" placeholder="5"></div>'+
+        '<div class="aform-group"><label class="aform-label">Occasion</label><select class="aform-select" id="pf-occ"><option value="">Select</option>'+occOpts+'</select></div>'+
+      '</div>'+
+      '<div class="aform-row">'+
+        '<div class="aform-group"><label class="aform-label">Certification</label><select class="aform-select" id="pf-cert">'+certOpts+'</select></div>'+
+        '<div class="aform-group"><label class="aform-label">Hallmarks</label><div class="halm-grid">'+hallHtml+'</div></div>'+
+      '</div>'+
+      '<div class="aform-group"><label class="aform-label">Description</label>'+
+        '<textarea class="aform-textarea" id="pf-desc" rows="3" placeholder="Product description...">'+esc(d.desc||d.description||'')+'</textarea>'+
+      '</div>'+
+      '<div class="aform-group"><label class="aform-label">Flags</label>'+
+        '<div class="aform-flags">'+
+          '<label class="flag-cb"><input type="checkbox" id="pf-feat"'+(d.featured?' checked':'')+' style="accent-color:var(--gold);width:14px;height:14px"> Featured</label>'+
+          '<label class="flag-cb"><input type="checkbox" id="pf-new"'+(d.newArrival?' checked':'')+' style="accent-color:var(--gold);width:14px;height:14px"> New Arrival</label>'+
+          '<label class="flag-cb"><input type="checkbox" id="pf-best"'+(d.bestSeller?' checked':'')+' style="accent-color:var(--gold);width:14px;height:14px"> Best Seller</label>'+
+        '</div>'+
+      '</div>'+
+      '<div style="margin-top:16px"><button class="abtn abtn-gold" onclick="saveProduct()">💾 Save Product</button></div>'+
+    '</div></div>';
+}
+
+function adminAddProduct(){
+  var f = document.getElementById('admin-product-form');
+  if(f) f.innerHTML = buildProductForm(null);
+  state.editingProduct = null;
+  f.scrollIntoView({behavior:'smooth'});
+}
+function adminEditProduct(id){
+  var p = state.products.find(function(x){return x.id===id});
+  if(!p) return;
+  state.editingProduct = id;
+  var f = document.getElementById('admin-product-form');
+  if(f) f.innerHTML = buildProductForm(p);
+  f.scrollIntoView({behavior:'smooth'});
+}
+function cancelProductForm(){
+  var f = document.getElementById('admin-product-form');
+  if(f) f.innerHTML='';
+  state.editingProduct = null;
+}
+function updateSubcatOptions(){
+  var catEl = q('#pf-cat');
+  var subEl = q('#pf-subcat');
+  if(!catEl||!subEl) return;
+  var cat = catEl.value;
+  var catObj = state.categories.find(function(c){return c.name===cat});
+  var subs = catObj?catObj.subcategories:[];
+  subEl.innerHTML = '<option value="">Select Subcategory</option>'+subs.map(function(s){return '<option value="'+esc(s)+'">'+esc(s)+'</option>'}).join('');
+}
+function saveProduct(){
+  var name = (q('#pf-name')||{}).value||'';
+  var cat  = (q('#pf-cat')||{}).value||'';
+  var price = parseFloat((q('#pf-price')||{}).value)||0;
+  if(!name||!cat||!price){alert('Please fill Name, Category, and Price.');return;}
+  var hallmarks = [];
+  qa('#product-form-box input[name=hallmark]:checked').forEach(function(cb){hallmarks.push(cb.value)});
+  var data = {
+    name: name,
+    emoji: (q('#pf-emoji')||{}).value||'💎',
+    category: cat,
+    subcategory: (q('#pf-subcat')||{}).value||'',
+    purity: (q('#pf-purity')||{}).value||'22K (916)',
+    weight: (q('#pf-weight')||{}).value||'',
+    price: price,
+    making: parseFloat((q('#pf-making')||{}).value)||0,
+    stock: parseInt((q('#pf-stock')||{}).value)||0,
+    occasion: (q('#pf-occ')||{}).value||'',
+    cert: (q('#pf-cert')||{}).value||'BIS Hallmark',
+    hallmarks: hallmarks,
+    desc: (q('#pf-desc')||{}).value||'',
+    featured: !!(q('#pf-feat')||{}).checked,
+    newArrival: !!(q('#pf-new')||{}).checked,
+    bestSeller: !!(q('#pf-best')||{}).checked,
+  };
+  if(state.editingProduct){
+    var idx = state.products.findIndex(function(x){return x.id===state.editingProduct});
+    if(idx>=0){
+      data.id = state.editingProduct;
+      data.code = state.products[idx].code;
+      state.products[idx] = data;
+    }
+  } else {
+    data.id = (state.products.length>0?Math.max.apply(null,state.products.map(function(p){return p.id})):0)+1;
+    data.code = getNextCode();
+    state.products.push(data);
+  }
+  save();
+  state.editingProduct=null;
+  renderAdminContent();
+  renderHome();
+}
+function adminDeleteProduct(id,code){
+  if(!confirm('Delete this product? Its code will never be reused.')) return;
+  state.deletedCodes.push(parseInt(code.split('-')[1])||0);
+  state.products = state.products.filter(function(p){return p.id!==id});
+  save();
+  renderAdminContent();
+  renderHome();
+}
+
+// ── CATEGORIES ADMIN ──
+function buildCategoriesAdmin(){
+  var catRows = state.categories.map(function(c){
+    var pCnt = state.products.filter(function(p){return p.category===c.name}).length;
+    var subcatTags = c.subcategories.map(function(s){
+      return '<span class="subcat-tag">'+esc(s)+
+        '<button class="subcat-tag-rm" onclick="removeSubcat('+c.id+',\''+esc(s)+'\')">×</button>'+
+        '</span>';
+    }).join('');
+    return '<div class="acard">'+
+      '<div class="acard-head">'+
+        '<div style="display:flex;align-items:center;gap:10px">'+
+          '<span style="font-size:22px">'+c.icon+'</span>'+
+          '<div class="acard-title">'+esc(c.name)+'</div>'+
+          '<span class="pill pill-gold" style="font-size:10px">'+pCnt+' products</span>'+
+        '</div>'+
+        '<button class="abtn abtn-red" style="padding:7px 14px;font-size:11px" onclick="removeCategory('+c.id+')">Remove</button>'+
+      '</div>'+
+      '<div class="acard-body">'+
+        '<div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);margin-bottom:10px">Subcategories</div>'+
+        '<div class="aform-subcat-tags" id="subtags-'+c.id+'">'+subcatTags+'</div>'+
+        '<div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">'+
+          '<input class="aform-input" style="width:200px" id="new-sub-'+c.id+'" placeholder="Add subcategory…" onkeydown="if(event.key===\'Enter\')addSubcat('+c.id+')">'+
+          '<button class="abtn abtn-dark" onclick="addSubcat('+c.id+')">Add</button>'+
+        '</div>'+
+      '</div>'+
+    '</div>';
+  }).join('');
+
+  return '<div class="admin-section-head">'+
+    '<div><div class="admin-section-title serif">Categories</div><div class="admin-section-sub">'+state.categories.length+' categories</div></div>'+
+  '</div>'+
+  '<div class="acard">'+
+    '<div class="acard-head"><div class="acard-title">Add New Category</div></div>'+
+    '<div class="acard-body">'+
+      '<div style="display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end">'+
+        '<div class="aform-group" style="margin:0">'+
+          '<label class="aform-label">Category Name</label>'+
+          '<input class="aform-input" id="new-cat-name" placeholder="e.g. Anklets" style="width:200px">'+
+        '</div>'+
+        '<div class="aform-group" style="margin:0">'+
+          '<label class="aform-label">Icon</label>'+
+          '<input class="aform-input" id="new-cat-icon" placeholder="✨" style="width:70px;font-size:20px">'+
+        '</div>'+
+        '<button class="abtn abtn-gold" onclick="addCategory()">Add Category</button>'+
+      '</div>'+
+    '</div>'+
+  '</div>'+catRows;
+}
+
+function addCategory(){
+  var n = (q('#new-cat-name')||{}).value||'';
+  var ico = (q('#new-cat-icon')||{}).value||'✨';
+  if(!n.trim()){alert('Enter a category name.');return;}
+  state.categories.push({id:Date.now(),name:n.trim(),icon:ico.trim(),subcategories:[]});
+  save();renderAdminContent();renderHome();
+}
+function removeCategory(id){
+  if(!confirm('Remove this category?')) return;
+  state.categories = state.categories.filter(function(c){return c.id!==id});
+  save();renderAdminContent();renderHome();
+}
+function addSubcat(catId){
+  var el = q('#new-sub-'+catId);
+  if(!el||!el.value.trim()) return;
+  var cat = state.categories.find(function(c){return c.id===catId});
+  if(cat&&cat.subcategories.indexOf(el.value.trim())<0){
+    cat.subcategories.push(el.value.trim());
+    el.value='';
+    save();renderAdminContent();
+  }
+}
+function removeSubcat(catId,sub){
+  var cat = state.categories.find(function(c){return c.id===catId});
+  if(cat) cat.subcategories = cat.subcategories.filter(function(s){return s!==sub});
+  save();renderAdminContent();
+}
+
+// ── SETTINGS ADMIN ──
+function buildSettingsAdmin(){
+  return '<div class="admin-section-head"><div class="admin-section-title serif">Store Settings</div></div>'+
+  '<div class="acard"><div class="acard-head"><div class="acard-title">Business Information</div></div><div class="acard-body">'+
+  '<div class="aform-row">'+
+    '<div class="aform-group"><label class="aform-label">Store Name</label><input class="aform-input" value="Om Arham Ornaments"></div>'+
+    '<div class="aform-group"><label class="aform-label">Phone</label><input class="aform-input" value="092281 24181"></div>'+
+  '</div>'+
+  '<div class="aform-row">'+
+    '<div class="aform-group"><label class="aform-label">WhatsApp Number</label><input class="aform-input" value="+91 92281 24181"></div>'+
+    '<div class="aform-group"><label class="aform-label">Instagram Handle</label><input class="aform-input" value="@omarhamornaments"></div>'+
+  '</div>'+
+  '<div class="aform-group"><label class="aform-label">Address</label>'+
+    '<textarea class="aform-textarea" rows="2">9, Wadi Rang Mahal, opp. Harhareshwar Mahadev, Moghul Wada, Vadodara, Gujarat 390017</textarea>'+
+  '</div>'+
+  '<button class="abtn abtn-gold" onclick="alert(\'Settings saved!\')">💾 Save Settings</button>'+
+  '</div></div>'+
+  '<div class="acard" style="margin-top:20px"><div class="acard-head"><div class="acard-title">Product Codes Overview</div></div><div class="acard-body">'+
+    '<div style="display:flex;gap:12px;flex-wrap:wrap">'+
+      '<div style="background:#f8f5f0;padding:14px 20px;border-radius:3px">'+
+        '<div style="font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--text3)">Total Products</div>'+
+        '<div style="font-size:28px;font-weight:700;color:var(--dark);font-family:var(--serif)">'+state.products.length+'</div>'+
+      '</div>'+
+      '<div style="background:#f8f5f0;padding:14px 20px;border-radius:3px">'+
+        '<div style="font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--text3)">Codes Ever Issued</div>'+
+        '<div style="font-size:28px;font-weight:700;color:var(--gold);font-family:var(--serif)">'+(state.products.length+state.deletedCodes.length)+'</div>'+
+      '</div>'+
+      '<div style="background:#f8f5f0;padding:14px 20px;border-radius:3px">'+
+        '<div style="font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--text3)">Deleted (Locked)</div>'+
+        '<div style="font-size:28px;font-weight:700;color:var(--red);font-family:var(--serif)">'+state.deletedCodes.length+'</div>'+
+      '</div>'+
+      '<div style="background:#f8f5f0;padding:14px 20px;border-radius:3px">'+
+        '<div style="font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--text3)">Next Code</div>'+
+        '<div style="font-size:20px;font-weight:700;color:var(--dark);font-family:monospace">'+getNextCode()+'</div>'+
+      '</div>'+
+    '</div>'+
+  '</div></div>';
+}
+
+function bindAdminEvents(){
+  // keyboard events for subcat input handled inline
+}
+
+// ════════════════════════════════════════════════════════
+//  NAVBAR SCROLL
+// ════════════════════════════════════════════════════════
+window.addEventListener('scroll',function(){
+  document.getElementById('main-nav').classList.toggle('scrolled',window.scrollY>40);
+});
+
+// ════════════════════════════════════════════════════════
+//  INIT
+// ════════════════════════════════════════════════════════
+document.addEventListener('DOMContentLoaded',function(){
+  initTicker();
+  initHeroCanvas();
+  renderHome();
+  initCatalogueFilters();
+});
+</script>
+</body>
+</html>
